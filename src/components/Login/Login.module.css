@@ -1,0 +1,14 @@
+.container {
+    max-width: 300px;
+    width: 50%;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+input {
+    display: block;
+    margin: 2px auto;
+}

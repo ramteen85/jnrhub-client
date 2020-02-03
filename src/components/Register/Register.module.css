@@ -1,0 +1,37 @@
+textarea {
+    margin: 0 auto;
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+input,
+button,
+textarea {
+    margin-bottom: 5px;
+    font-size: 15px;
+    padding: 3px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    display: inline-block;
+    text-align: center;
+    border: none;
+    background: purple;
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-family: 18px;
+    font-weight: bold;
+    max-width: 200px;
+    margin: 0 auto;
+}
