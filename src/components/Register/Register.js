@@ -103,7 +103,7 @@ class Register extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        
+
         // console.log(e.target);
 
         let valid = true;
@@ -114,8 +114,10 @@ class Register extends Component {
 
         if(valid) {
             // TODO:
+
             // move checktype component into this one
             // hide form, display options for jobseeker or employer (only upon registration)
+            this.state.submitted = true;
         }
     }
 
@@ -152,7 +154,7 @@ class Register extends Component {
                         <div className={styles.jobseeker}>
                             <label>A Job Seeker</label>
                             <img src="/assets/img/bludger.jpg" alt="dole bludging job seeker"/>
-                            
+
                         </div>
                     </div>
                 </div>
