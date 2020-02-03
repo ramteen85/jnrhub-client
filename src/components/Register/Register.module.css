@@ -1,13 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
 
-
-textarea {
-    margin: 0 auto;
-    display: block;
-    font-family: 'Inconsolata', monospace;
-}
-
 h1 {
     text-align: center;
     margin-top: 20px;
@@ -22,6 +15,14 @@ textarea {
     font-size: 15px;
     padding: 3px;
     font-family: 'Inconsolata', monospace;
+    border: 1px solid rgb(238, 238, 238);
+}
+
+textarea {
+    margin: 0 auto;
+    display: block;
+    font-family: 'Inconsolata', monospace;
+    resize: none;
 }
 
 form {
