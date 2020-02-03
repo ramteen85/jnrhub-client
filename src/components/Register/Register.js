@@ -9,11 +9,11 @@ class Register extends Component {
     };
 
     jobseekerHandler = (e) => {
-
+        console.log(e);
     }
 
     employerHandler = (e) => {
-        
+        console.log(e);
     }
 
     inputChangeHandler = (event) => {
