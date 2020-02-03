@@ -4,15 +4,33 @@ import "./Register.module.css";
 class Register extends Component {
 
 
+    inputChangeHandler(event) {
+        event.preventDefault();
+        console.log(event);
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        console.log('the target is:');
+        
+        console.log(e.target);
+        console.log(e.target.suburb);
+        console.log(`the suburb is: ${e.target.suburb.value}`);
+        document.querySelector('#suburb').style.border = "2px solid red";
+
+
+        
+    }
+
     render() {
         return(
             <div className="container">
                 <h1>Register Now</h1>
-                <form>
-                    <input type="email" placeholder="Your Email" />
-                    <input type="text" placeholder="Your Full Name" />
+                <form onSubmit={this.handleSubmit}>
+                    <input type="email" placeholder="Your Email" onChange={this.inputChangeHandler} name="email" id="email" />
+                    <input type="text" placeholder="Your Full Name" name="fullname" />
                     <input type="text" placeholder="Phone Number" />
-                    <input type="text" placeholder="Suburb" />
+                    <input type="text" placeholder="Suburb" name="suburb" id="suburb" />
                     <input type="text" placeholder="State" />
                     <input type="text" placeholder="Country" />
                     <input type="text" placeholder="Website URL (optional)"/>
