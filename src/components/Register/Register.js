@@ -8,6 +8,13 @@ class Register extends Component {
         submitted: false
     };
 
+    jobseekerHandler = (e) => {
+
+    }
+
+    employerHandler = (e) => {
+        
+    }
 
     inputChangeHandler = (event) => {
         event.preventDefault();
@@ -117,7 +124,7 @@ class Register extends Component {
 
             // move checktype component into this one
             // hide form, display options for jobseeker or employer (only upon registration)
-            this.state.submitted = true;
+            this.setState({submitted: true});
         }
     }
 
@@ -147,11 +154,11 @@ class Register extends Component {
                     <h2 className={styles.subtitle}>Are you:</h2>
 
                     <div className={styles.container}>
-                        <div className={styles.employer}>
+                        <div className={styles.employer} onClick={this.employerHandler}>
                             <label>An Employer</label>
                             <img src="/assets/img/boss.jpeg" alt="The big boss"/>
                         </div>
-                        <div className={styles.jobseeker}>
+                        <div className={styles.jobseeker} onClick={this.jobseekerHandler}>
                             <label>A Job Seeker</label>
                             <img src="/assets/img/bludger.jpg" alt="dole bludging job seeker"/>
 
