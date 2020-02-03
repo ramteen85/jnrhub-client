@@ -122,21 +122,25 @@ class Register extends Component {
     render() {
         return(
             <div className="container">
-                <h1>Register Now</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.inputChangeHandler} type="email" placeholder="Your Email" name="email" id="email" className={this.state.emailInvalid} />
-                    <input onChange={this.inputChangeHandler} type="text" placeholder="Your Full Name" name="fullname" id="fullname" className={this.state.fullnameInvalid} />
-                    <input onChange={this.inputChangeHandler} type="text" placeholder="Phone Number" name="phone" id="phone" className={this.state.phoneInvalid} />
-                    <input onChange={this.inputChangeHandler} type="text" placeholder="Suburb" name="suburb" id="suburb" className={this.state.suburbInvalid} />
-                    <input onChange={this.inputChangeHandler} type="text" placeholder="State" name="state" id="state" className={this.state.stateInvalid} />
-                    <input onChange={this.inputChangeHandler} type="text" placeholder="Country" name="country" id="country" className={this.state.countryInvalid} />
-                    <input onChange={this.inputChangeHandler} type="text" placeholder="Website URL (optional)" name="website" id="website" />
-                    <textarea onChange={this.inputChangeHandler} cols="30" rows="5" placeholder="Please tell us about yourself..." name="about" id="about" className={this.state.aboutInvalid}/>
-                    <input onChange={this.inputChangeHandler} type="password" placeholder="Your Password" name="password" id="password" className={this.state.passwordInvalid} />
-                    <input onChange={this.inputChangeHandler} type="password" placeholder="Confirm Password" name="confirm_password" id="confirm_password" className={this.state.confirmPasswordInvalid} />
-                    <button type="submit">Register</button>
-                </form>
-                
+                { !this.state.submitted
+                ?
+                <div className={styles.regForm}>
+                    <h1>Register Now</h1>
+                    <form onSubmit={this.handleSubmit}>
+                        <input onChange={this.inputChangeHandler} type="email" placeholder="Your Email" name="email" id="email" className={this.state.emailInvalid} />
+                        <input onChange={this.inputChangeHandler} type="text" placeholder="Your Full Name" name="fullname" id="fullname" className={this.state.fullnameInvalid} />
+                        <input onChange={this.inputChangeHandler} type="text" placeholder="Phone Number" name="phone" id="phone" className={this.state.phoneInvalid} />
+                        <input onChange={this.inputChangeHandler} type="text" placeholder="Suburb" name="suburb" id="suburb" className={this.state.suburbInvalid} />
+                        <input onChange={this.inputChangeHandler} type="text" placeholder="State" name="state" id="state" className={this.state.stateInvalid} />
+                        <input onChange={this.inputChangeHandler} type="text" placeholder="Country" name="country" id="country" className={this.state.countryInvalid} />
+                        <input onChange={this.inputChangeHandler} type="text" placeholder="Website URL (optional)" name="website" id="website" />
+                        <textarea onChange={this.inputChangeHandler} cols="30" rows="5" placeholder="Please tell us about yourself..." name="about" id="about" className={this.state.aboutInvalid}/>
+                        <input onChange={this.inputChangeHandler} type="password" placeholder="Your Password" name="password" id="password" className={this.state.passwordInvalid} />
+                        <input onChange={this.inputChangeHandler} type="password" placeholder="Confirm Password" name="confirm_password" id="confirm_password" className={this.state.confirmPasswordInvalid} />
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+                :
                 <div>
                     <h2 className={styles.subtitle}>Are you:</h2>
 
@@ -152,7 +156,7 @@ class Register extends Component {
                         </div>
                     </div>
                 </div>
-                
+                }
             </div>
         );
     }
