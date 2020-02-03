@@ -7,7 +7,7 @@ class Register extends Component {
     render() {
         return(
             <div className="container">
-                <h1>Register Now</h1>
+                <h1>Register Now!</h1>
                 <form>
                     <input type="email" placeholder="Your Email" />
                     <input type="text" placeholder="Your Full Name" />

@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+
+
+
+
 p {
     text-align: center;
     font-size: 65px;
     margin-top: 20px;
+    font-family: 'Inconsolata', monospace;
+
+
 }
