@@ -10,10 +10,12 @@ class Register extends Component {
 
     jobseekerHandler = (e) => {
         console.log(e);
+        console.log(this.state);
     }
 
     employerHandler = (e) => {
         console.log(e);
+        console.log(this.state);
     }
 
     inputChangeHandler = (event) => {
