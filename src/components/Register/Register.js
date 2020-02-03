@@ -124,7 +124,7 @@ class Register extends Component {
     render() {
         return(
             <div className="container">
-                { !this.state.submitted
+                { this.state.submitted === false
                 ?
                 <div className={styles.regForm}>
                     <h1>Register Now</h1>
