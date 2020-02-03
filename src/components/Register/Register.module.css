@@ -1,12 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+
+
 textarea {
     margin: 0 auto;
     display: block;
+    font-family: 'Inconsolata', monospace;
 }
 
 h1 {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 15px;
+    font-family: 'Inconsolata', monospace;
 }
 
 input,
@@ -15,11 +21,13 @@ textarea {
     margin-bottom: 5px;
     font-size: 15px;
     padding: 3px;
+    font-family: 'Inconsolata', monospace;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    font-family: 'Inconsolata', monospace;
 }
 
 button {
@@ -27,11 +35,11 @@ button {
     text-align: center;
     border: none;
     background: purple;
-    padding: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
     color: white;
     font-family: 18px;
     font-weight: bold;
     max-width: 200px;
     margin: 0 auto;
+    font-family: 'Inconsolata', monospace
 }
