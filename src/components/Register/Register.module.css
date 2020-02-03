@@ -8,6 +8,14 @@ h1 {
     font-family: 'Inconsolata', monospace;
 }
 
+.error {
+    border: 1px solid red;
+}
+
+.normal {
+    border: 1px solid rgb(238, 238, 238);
+}
+
 input,
 button,
 textarea {

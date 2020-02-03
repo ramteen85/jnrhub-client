@@ -25,7 +25,7 @@ class Navbar extends Component {
                 <nav>
                 <ul>
                     <li>
-                        <p>JnrHub</p>
+                        <p>&lt;Jnr/Hub&gt;</p>
                     </li>
                 </ul>
             </nav> 
