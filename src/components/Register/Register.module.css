@@ -52,3 +52,48 @@ button {
     margin: 0 auto;
     font-family: 'Inconsolata', monospace
 }
+
+.subtitle {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 60%;
+}
+
+.employer,
+.jobseeker {
+    text-align: center;
+    flex: 1;
+    border: 2px solid red;
+    margin-bottom: 100px;
+    height: 200px;
+    justify-self: center;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.employer:hover,
+.jobseeker:hover {
+    cursor: pointer;
+    flex: 1.1;
+    box-shadow: 2px 4px #888888;
+    border: 2px solid blue;
+}
+
+.employer {
+    margin-right: 20px;
+}
+
+.employer img,
+.jobseeker img {
+    width: 100%;
+    margin-top: 10px;
+    max-width: 200px;
+    max-height: 130px;
+}

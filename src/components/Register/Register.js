@@ -5,6 +5,7 @@ import styles from  "./Register.module.css";
 class Register extends Component {
 
     state = {
+        submitted: false
     };
 
 
@@ -135,6 +136,23 @@ class Register extends Component {
                     <input onChange={this.inputChangeHandler} type="password" placeholder="Confirm Password" name="confirm_password" id="confirm_password" className={this.state.confirmPasswordInvalid} />
                     <button type="submit">Register</button>
                 </form>
+                
+                <div>
+                    <h2 className={styles.subtitle}>Are you:</h2>
+
+                    <div className={styles.container}>
+                        <div className={styles.employer}>
+                            <label>An Employer</label>
+                            <img src="/assets/img/boss.jpeg" alt="The big boss"/>
+                        </div>
+                        <div className={styles.jobseeker}>
+                            <label>A Job Seeker</label>
+                            <img src="/assets/img/bludger.jpg" alt="dole bludging job seeker"/>
+                            
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         );
     }
