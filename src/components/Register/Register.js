@@ -36,6 +36,8 @@ class Register extends Component {
         })
         .then(res => {
             console.log(res);
+            // TODO: redirect to the jobseekers page
+            this.props.history.push(`/jobseeker`);
         })
         .catch(err => {
             console.log(err);
@@ -64,6 +66,11 @@ class Register extends Component {
         })
         .then(res => {
             console.log(res);
+            // account created successfully!
+            // TODO: perform login for new account, using knock route
+            // todo: redirect to employers page
+            this.props.history.push(`/employer`);
+
         })
         .catch(err => {
             console.log(err);
