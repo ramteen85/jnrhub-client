@@ -22,12 +22,15 @@ class Register extends Component {
             country: this.state.country,
             website: this.state.website,
             about: this.state.about,
-            userType: this.state.userType,
+            userType: "jobseeker",
             password: this.state.password,
             password_confirmation: this.state.confirm_password
         })
         .then(res => {
             console.log(res);
+        })
+        .catch(err => {
+            console.log(err);
         });
     }
 
@@ -44,12 +47,15 @@ class Register extends Component {
             country: this.state.country,
             website: this.state.website,
             about: this.state.about,
-            userType: this.state.userType,
+            userType: "employer",
             password: this.state.password,
             password_confirmation: this.state.confirm_password
         })
         .then(res => {
             console.log(res);
+        })
+        .catch(err => {
+            console.log(err);
         });
     }
 
