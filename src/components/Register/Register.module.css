@@ -101,3 +101,27 @@ button {
 .regForm {
     margin-bottom: 100px;
 }
+
+.button {
+    display: inline-block;
+    text-align: center;
+    border: none;
+    background: blue;
+    padding: 1px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 200px;
+    margin: 0 auto;
+    font-family: 'Inconsolata', monospace
+}
+
+.errorMsg {
+  color: red;
+  text-align: center;
+  font-size: 10px;
+}
+
+.hidden {
+  display: none;
+}

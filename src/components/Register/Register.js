@@ -6,8 +6,13 @@ import axios from 'axios';
 class Register extends Component {
 
     state = {
-        submitted: false
-    };
+        submitted: false,
+        emailError: styles.errorMsg,
+
+
+      };
+
+
 
     jobseekerHandler = (e) => {
         this.setState({userType: "jobseeker"});
@@ -27,7 +32,7 @@ class Register extends Component {
                 admin: false,
                 password: this.state.password,
                 password_confirmation: this.state.confirm_password
-            }     
+            }
         })
         .then(res => {
             console.log(res);
@@ -55,7 +60,7 @@ class Register extends Component {
                 admin: false,
                 password: this.state.password,
                 password_confirmation: this.state.confirm_password
-            } 
+            }
         })
         .then(res => {
             console.log(res);
@@ -93,16 +98,23 @@ class Register extends Component {
     validate = (valid, e) => {
         if(e.target.email.value === "") {
             this.setState({emailInvalid: styles.error});
+            this.setState({emailError: styles.errorMsg});
             valid = false;
         } else {
             this.setState({emailInvalid: styles.normal});
+            this.setState({emailError: styles.hidden});
+
         }
 
         if(e.target.fullname.value === "") {
             this.setState({fullnameInvalid: styles.error});
+            this.setState({fullnameError: styles.errorMsg});
             valid = false;
         } else {
             this.setState({fullnameInvalid: styles.normal});
+            this.setState({fullnameError: styles.hidden});
+
+
         }
 
         if(e.target.phone.value === "") {
@@ -186,16 +198,31 @@ class Register extends Component {
                     <h1>Register Now</h1>
                     <form onSubmit={this.handleSubmit}>
                         <input onChange={this.inputChangeHandler} type="email" placeholder="Your Email" name="email" id="email" className={this.state.emailInvalid} />
+                        <label className={this.state.emailError}>Please enter your email</label>
                         <input onChange={this.inputChangeHandler} type="text" placeholder="Your Full Name" name="fullname" id="fullname" className={this.state.fullnameInvalid} />
+                        <label className={styles.errorMsg}>Please enter your name</label>
                         <input onChange={this.inputChangeHandler} type="text" placeholder="Phone Number" name="phone" id="phone" className={this.state.phoneInvalid} />
-                        <input onChange={this.inputChangeHandler} type="text" placeholder="Suburb" name="suburb" id="suburb" className={this.state.suburbInvalid} />
-                        <input onChange={this.inputChangeHandler} type="text" placeholder="State" name="state" id="state" className={this.state.stateInvalid} />
-                        <input onChange={this.inputChangeHandler} type="text" placeholder="Country" name="country" id="country" className={this.state.countryInvalid} />
-                        <input onChange={this.inputChangeHandler} type="text" placeholder="Website URL (optional)" name="website" id="website" />
+                          <label className={styles.errorMsg}>Please enter your number</label>
+                        <input onChange={this.inputChangeHandler} type="text" placeholder="Suburb"
+                          name="suburb" id="suburb" className={this.state.suburbInvalid} />
+                        <label className={styles.errorMsg}>Please enter your suburb</label>
+                        <input onChange={this.inputChangeHandler} type="text" placeholder="State"
+                          name="state" id="state" className={this.state.stateInvalid} />
+                        <label className={styles.errorMsg}>Please enter your state</label>
+
+                      <input onChange={this.inputChangeHandler} type="text" placeholder="Country" name="country" id="country" className={this.state.countryInvalid} />
+                        <label className={styles.errorMsg}>Please enter your Country</label>
+
+                      <input onChange={this.inputChangeHandler} type="text" placeholder="Website URL (optional)" name="website" id="website" />
                         <textarea onChange={this.inputChangeHandler} cols="30" rows="5" placeholder="Please tell us about yourself..." name="about" id="about" className={this.state.aboutInvalid}/>
                         <input onChange={this.inputChangeHandler} type="password" placeholder="Your Password" name="password" id="password" className={this.state.passwordInvalid} />
-                        <input onChange={this.inputChangeHandler} type="password" placeholder="Confirm Password" name="confirm_password" id="confirm_password" className={this.state.confirmPasswordInvalid} />
-                        <button type="submit">Register</button>
+                          <label className={styles.errorMsg}>Please enter a valid password</label>
+
+                      <input onChange={this.inputChangeHandler} type="password" placeholder="Confirm Password"
+                      name="confirm_password" id="confirm_password" className={this.state.confirmPasswordInvalid} />
+                    <label className={styles.errorMsg}>Passwords must match!</label>
+
+                      <button type="submit">Register</button>
                     </form>
                 </div>
                 :
