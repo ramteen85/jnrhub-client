@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import styles from "./Login.module.css";
+import axios from 'axios';
 
 class Login extends Component {
 
@@ -9,12 +11,28 @@ class Login extends Component {
     }
 
     loginHandler = (e) => {
+        // this.state.username
         e.preventDefault();
-        console.log("test");
-        console.log("event: ");
-        console.log(e);
-        console.log("state: ");
-        console.log(this.state);
+
+        const username = this.state.username;
+        const password = this.state.password;
+
+        axios.post('http://localhost:3000/login', {
+            email: username,
+            password: password
+        }).then(res => {
+            console.log(res);
+            if(res.data.user_type === "jobseeker") {
+                // redirect to jobseeker component
+                this.props.history.push(`/jobseeker`);
+            } else if(res.data.user_type === "employer") {
+                // redirect_to employer component
+                this.props.history.push(`/employer`);
+            }
+        }).catch(err => {
+            //TODO: display error message in login screen
+            console.log(`RESPONSE: ${err}`);
+        });
 
         //TODO: 
         // clear input fields when submitting
@@ -43,4 +61,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);
