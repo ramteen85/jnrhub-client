@@ -13,7 +13,7 @@ class Register extends Component {
         this.setState({userType: "jobseeker"});
         console.log(e);
         console.log(this.state);
-        axios.post('http://localhost:3000/users/register', {
+        axios.post('http://localhost:3000/users/create', {
             email: this.state.email,
             full_name: this.state.fullname,
             phone_no: this.state.phone,
@@ -38,7 +38,7 @@ class Register extends Component {
         this.setState({userType: "employer"});
         console.log(e);
         console.log(this.state);
-        axios.post('http://localhost:3000/users/register', {
+        axios.post('http://localhost:3000/users/create', {
             email: this.state.email,
             full_name: this.state.fullname,
             phone_no: this.state.phone,
