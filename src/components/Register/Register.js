@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import styles from  "./Register.module.css";
+import axios from 'axios';
 
 class Register extends Component {
 
@@ -9,13 +10,41 @@ class Register extends Component {
     };
 
     jobseekerHandler = (e) => {
+        this.setState({userType: "jobseeker"});
         console.log(e);
         console.log(this.state);
+        axios.post('http://localhost:3000/users/register', {
+            email: this.state.email,
+            full_name: this.state.fullname,
+            phone_no: this.state.phone,
+            suburb: this.state.suburb,
+            state: this.state.state,
+            country: this.state.country,
+            website: this.state.website,
+            about: this.state.about,
+            userType: this.state.userType,
+            password: this.state.password,
+            password_confirmation: this.state.confirm_password
+        });
     }
 
     employerHandler = (e) => {
+        this.setState({userType: "employer"});
         console.log(e);
         console.log(this.state);
+        axios.post('http://localhost:3000/users/register', {
+            email: this.state.email,
+            full_name: this.state.fullname,
+            phone_no: this.state.phone,
+            suburb: this.state.suburb,
+            state: this.state.state,
+            country: this.state.country,
+            website: this.state.website,
+            about: this.state.about,
+            userType: this.state.userType,
+            password: this.state.password,
+            password_confirmation: this.state.confirm_password
+        });
     }
 
     inputChangeHandler = (event) => {
