@@ -25,6 +25,9 @@ class Register extends Component {
             userType: this.state.userType,
             password: this.state.password,
             password_confirmation: this.state.confirm_password
+        })
+        .then(res => {
+            console.log(res);
         });
     }
 
@@ -44,6 +47,9 @@ class Register extends Component {
             userType: this.state.userType,
             password: this.state.password,
             password_confirmation: this.state.confirm_password
+        })
+        .then(res => {
+            console.log(res);
         });
     }
 
