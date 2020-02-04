@@ -13,18 +13,21 @@ class Register extends Component {
         this.setState({userType: "jobseeker"});
         console.log(e);
         console.log(this.state);
-        axios.post('http://localhost:3000/users/create', {
-            email: this.state.email,
-            full_name: this.state.fullname,
-            phone_no: this.state.phone,
-            suburb: this.state.suburb,
-            state: this.state.state,
-            country: this.state.country,
-            website: this.state.website,
-            about: this.state.about,
-            userType: "jobseeker",
-            password: this.state.password,
-            password_confirmation: this.state.confirm_password
+        axios.post('http://localhost:3000/users', {
+            user: {
+                email: this.state.email,
+                full_name: this.state.fullname,
+                phone_no: this.state.phone,
+                suburb: this.state.suburb,
+                state: this.state.state,
+                country: this.state.country,
+                website: this.state.website,
+                about: this.state.about,
+                user_type: "jobseeker",
+                admin: false,
+                password: this.state.password,
+                password_confirmation: this.state.confirm_password
+            }     
         })
         .then(res => {
             console.log(res);
@@ -38,18 +41,21 @@ class Register extends Component {
         this.setState({userType: "employer"});
         console.log(e);
         console.log(this.state);
-        axios.post('http://localhost:3000/users/create', {
-            email: this.state.email,
-            full_name: this.state.fullname,
-            phone_no: this.state.phone,
-            suburb: this.state.suburb,
-            state: this.state.state,
-            country: this.state.country,
-            website: this.state.website,
-            about: this.state.about,
-            userType: "employer",
-            password: this.state.password,
-            password_confirmation: this.state.confirm_password
+        axios.post('http://localhost:3000/users', {
+            user: {
+                email: this.state.email,
+                full_name: this.state.fullname,
+                phone_no: this.state.phone,
+                suburb: this.state.suburb,
+                state: this.state.state,
+                country: this.state.country,
+                website: this.state.website,
+                about: this.state.about,
+                user_type: "employer",
+                admin: false,
+                password: this.state.password,
+                password_confirmation: this.state.confirm_password
+            } 
         })
         .then(res => {
             console.log(res);
