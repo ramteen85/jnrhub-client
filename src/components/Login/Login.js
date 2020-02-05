@@ -55,19 +55,22 @@ class Login extends Component {
               <form onSubmit={this.loginHandler}>
                     <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
                     <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
-                    <button type="submit">Login</button>
-                </form>
 
-                <div className="invalidlogin">
 
-                 error:please fill in all fields
+                <button className = {styles.button} type="submit">Login</button>
+
+
+
+                  </form>
+
+                <div className={styles.invalidlogin}>
+
+
+                 Error! Please fill in all fields!
                 </div>
 
 
-
-
-
-            </div>
+                </div>
 
 
 
