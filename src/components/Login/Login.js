@@ -7,13 +7,16 @@ class Login extends Component {
 
     state = {
         username: '',
-        password: ''
+        password: '',
+        invalidLogin: false
 
     }
 
     loginHandler = (e) => {
         // this.state.username
         e.preventDefault();
+
+
 
         const username = this.state.username;
         const password = this.state.password;
@@ -57,6 +60,7 @@ class Login extends Component {
             .catch(err => {
                 // didnt get ID
                 console.log(err);
+                this.setState({invalidLogin: true});
             })
 
 
@@ -64,6 +68,7 @@ class Login extends Component {
             //TODO: display error message in login screen
             console.log('ERROR: ');
             console.log(err);
+            this.setState({invalidLogin: true});
         });
 
         //TODO:
@@ -90,9 +95,15 @@ class Login extends Component {
                     <button className = {styles.button} type="submit">Login</button>
                 </form>
 
+                { this.state.invalidLogin
+                ?
                 <div className={styles.invalidLogin}>
                     Error! Please fill in all fields!
                 </div>
+                :
+                ""
+                }
+
             </div>
         );
     }
