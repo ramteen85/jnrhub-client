@@ -59,7 +59,7 @@ class Login extends Component {
                     <button className = {styles.button} type="submit">Login</button>
                 </form>
 
-                <div className={styles.invalidlogin}>
+                <div className={styles.invalidLogin}>
                     Error! Please fill in all fields!
                 </div>
             </div>
