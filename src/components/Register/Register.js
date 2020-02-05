@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import styles from  "./Register.module.css";
 import axios from 'axios';
+import Navbar from '../Navbar/Navbar';
 
 class Register extends Component {
 
@@ -206,6 +207,7 @@ class Register extends Component {
     render() {
         return(
             <div className="container">
+                <Navbar loggedin="false" />
                 { this.state.submitted === false
                 ?
                 <div className={styles.regForm}>

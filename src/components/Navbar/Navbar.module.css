@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
 
+.loggedoutnav {
+    margin-bottom: 30px;
+}
 
-.navwrapper {
-
+.loggedoutnav ul {
+    list-style: none;
 }
 
 .loggedinnav ul {

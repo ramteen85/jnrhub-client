@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import styles from "./Login.module.css";
 import axios from 'axios';
+import Navbar from '../Navbar/Navbar';
 
 class Login extends Component {
 
@@ -51,6 +52,7 @@ class Login extends Component {
     render() {
         return(
             <div className={styles.container}>
+                <Navbar loggedin="false" />
                 <form onSubmit={this.loginHandler}>
                     <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
                     <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
