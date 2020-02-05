@@ -16,8 +16,8 @@ function App() {
   return (
     <Router>
       <div className="App">
+          <Navbar loggedin={true} />
           <Switch>
-            <Navbar loggedin={false} />
             <Route path="/" exact component={Login} />
             <Route path="/register" exact component={Register} />
             <Route path="/jobseeker" exact component={Lobbyjs} />

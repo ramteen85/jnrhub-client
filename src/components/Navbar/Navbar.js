@@ -24,6 +24,7 @@ class Navbar extends Component {
                 { this.state.loggedin === true
                 ? 
                 <nav className={styles.loggedinnav}>
+                    <p className={styles.brand}>&lt;Jnr/Hub&gt;</p>
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/">Jobs</Link></li>
@@ -35,7 +36,7 @@ class Navbar extends Component {
                 <nav className={styles.loggedoutnav}>
                     <ul>
                         <li>
-                            <p className={styles.brand}>&lt;Jnr/Hub&gt;</p>
+                            
                         </li>
                     </ul>
                 </nav> 

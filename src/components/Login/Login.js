@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import styles from "./Login.module.css";
 import axios from 'axios';
-import Navbar from '../Navbar/Navbar';
 
 class Login extends Component {
 
     state = {
         username: '',
         password: ''
+
     }
 
     loginHandler = (e) => {
@@ -35,7 +35,7 @@ class Login extends Component {
             console.log(`RESPONSE: ${err}`);
         });
 
-        //TODO: 
+        //TODO:
         // clear input fields when submitting
         // grab login info and redirect to landing pages accordingly
     }
@@ -52,15 +52,20 @@ class Login extends Component {
     render() {
         return(
             <div className={styles.container}>
-                <Navbar loggedin="false" />
+
                 <form onSubmit={this.loginHandler}>
                     <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
                     <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
-                    <button type="submit">Login</button>
+                    <button className = {styles.button} type="submit">Login</button>
                 </form>
+
+                <div className={styles.invalidlogin}>
+                    Error! Please fill in all fields!
+                </div>
             </div>
         );
     }
+
 }
 
 export default withRouter(Login);
