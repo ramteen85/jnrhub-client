@@ -8,6 +8,7 @@ class Login extends Component {
     state = {
         username: '',
         password: ''
+
     }
 
     loginHandler = (e) => {
@@ -34,7 +35,7 @@ class Login extends Component {
             console.log(`RESPONSE: ${err}`);
         });
 
-        //TODO: 
+        //TODO:
         // clear input fields when submitting
         // grab login info and redirect to landing pages accordingly
     }
@@ -51,14 +52,30 @@ class Login extends Component {
     render() {
         return(
             <div className={styles.container}>
-                <form onSubmit={this.loginHandler}>
+              <form onSubmit={this.loginHandler}>
                     <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
                     <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
                     <button type="submit">Login</button>
                 </form>
+
+                <div className="invalidlogin">
+
+                 error:please fill in all fields
+                </div>
+
+
+
+
+
             </div>
+
+
+
+
+
         );
     }
+
 }
 
 export default withRouter(Login);
