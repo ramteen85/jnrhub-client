@@ -9,7 +9,14 @@ class Register extends Component {
         submitted: false,
         emailError: styles.errorMsg,
         emailInvalid: "",
-        fullnameInvalid: ""
+        fullnameInvalid: "",
+        phoneInvalid: "",
+        suburbInvalid:"",
+        stateInvalid:"",
+        countryInvalid:"",
+        aboutInvalid: "",
+        passwordInvalid:""
+
     };
 
 
@@ -206,7 +213,7 @@ class Register extends Component {
                     <form onSubmit={this.handleSubmit}>
                         <input onChange={this.inputChangeHandler} type="email" placeholder="Your Email" name="email" id="email" className={this.state.emailInvalid} />
                         { this.state.emailInvalid.startsWith("Register_error")
-                        ? 
+                        ?
                         <label className={this.state.emailError}>Please enter your email</label>
                         :
                         ""
@@ -219,49 +226,87 @@ class Register extends Component {
                         ""
                         }
                         <input onChange={this.inputChangeHandler} type="text" placeholder="Phone Number" name="phone" id="phone" className={this.state.phoneInvalid} />
-                          <label className={styles.errorMsg}>Please enter your number</label>
+                        { this.state.phoneInvalid.startsWith("Register_error")
+                        ?
+                        <label className={styles.errorMsg}>Please enter your number</label>
+                        :
+                        ""
+                        }
+
                         <input onChange={this.inputChangeHandler} type="text" placeholder="Suburb"
                           name="suburb" id="suburb" className={this.state.suburbInvalid} />
-                        <label className={styles.errorMsg}>Please enter your suburb</label>
+                        { this.state.suburbInvalid.startsWith("Register_error")
+                          ?
+                          <label className={styles.errorMsg}>Please enter your suburb</label>
+                          :
+                          ""
+                        }
+
                         <input onChange={this.inputChangeHandler} type="text" placeholder="State"
                           name="state" id="state" className={this.state.stateInvalid} />
-                        <label className={styles.errorMsg}>Please enter your state</label>
+                        { this.state.stateInvalid.startsWith("Register_error")
+                          ?
+                          <label className={styles.errorMsg}>Please enter your state</label>
+                          :
+                          ""
+                        }
+                        <input onChange={this.inputChangeHandler} type="text" placeholder="Country" name="country" id="country" className={this.state.countryInvalid} />
+                          { this.state.countryInvalid.startsWith("Register_error")
+                          ?
+                          <label className={styles.errorMsg}>Please enter your Country</label>
+                          :
+                          ""
+                        }
 
-                      <input onChange={this.inputChangeHandler} type="text" placeholder="Country" name="country" id="country" className={this.state.countryInvalid} />
-                        <label className={styles.errorMsg}>Please enter your Country</label>
-
-                      <input onChange={this.inputChangeHandler} type="text" placeholder="Website URL (optional)" name="website" id="website" />
+                        <input onChange={this.inputChangeHandler} type="text" placeholder="Website URL (optional)" name="website" id="website" />
                         <textarea onChange={this.inputChangeHandler} cols="30" rows="5" placeholder="Please tell us about yourself..." name="about" id="about" className={this.state.aboutInvalid}/>
+                        { this.state.aboutInvalid.startsWith("Register_error")
+                          ?
+                          <label className={styles.errorMsg}>Please enter your about information!</label>
+                          :
+                          ""
+                        }
                         <input onChange={this.inputChangeHandler} type="password" placeholder="Your Password" name="password" id="password" className={this.state.passwordInvalid} />
+                        { this.state.passwordInvalid.startsWith("Register_error")
+                          ?
                           <label className={styles.errorMsg}>Please enter a valid password</label>
+                          :
+                          ""
+                        }
 
-                      <input onChange={this.inputChangeHandler} type="password" placeholder="Confirm Password"
-                      name="confirm_password" id="confirm_password" className={this.state.confirmPasswordInvalid} />
-                    <label className={styles.errorMsg}>Passwords must match!</label>
 
-                      <button type="submit">Register</button>
-                    </form>
-                </div>
-                :
-                <div>
-                    <h2 className={styles.subtitle}>Are you:</h2>
+                        <input onChange={this.inputChangeHandler} type="password" placeholder="Confirm Password"
+                          name="confirm_password" id="confirm_password" className={this.state.confirmPasswordInvalid} />
+                        { this.state.password !== this.state.confirm_password && this.state.password && this.state.confirm_password
+                        ?
+                        <label className={styles.errorMsg}>Passwords must match!</label>
+                        :
+                        ""
+                        }
 
-                    <div className={styles.container}>
+                        <button type="submit">Register</button>
+                      </form>
+                    </div>
+                    :
+                    <div>
+                      <h2 className={styles.subtitle}>Are you:</h2>
+
+                      <div className={styles.container}>
                         <div className={styles.employer} onClick={this.employerHandler}>
-                            <label>An Employer</label>
-                            <img src="/assets/img/boss.jpeg" alt="The big boss"/>
+                          <label>An Employer</label>
+                          <img src="/assets/img/boss.jpeg" alt="The big boss"/>
                         </div>
                         <div className={styles.jobseeker} onClick={this.jobseekerHandler}>
-                            <label>A Job Seeker</label>
-                            <img src="/assets/img/bludger.jpg" alt="dole bludging job seeker"/>
+                          <label>A Job Seeker</label>
+                          <img src="/assets/img/bludger.jpg" alt="dole bludging job seeker"/>
 
                         </div>
+                      </div>
                     </div>
+                  }
                 </div>
-                }
-            </div>
-        );
-    }
-}
+              );
+            }
+          }
 
 export default withRouter(Register);
