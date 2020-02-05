@@ -1,7 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
 
 
-p {
+.navwrapper {
+
+}
+
+.loggedinnav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    padding: 30px;
+}
+
+.loggedinnav ul li {
+    margin-right: 10px;
+}
+
+.loggedinnav ul li a {
+    text-decoration: none;
+}
+
+.loggedinnav ul li a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.brand {
     text-align: center;
     font-size: 65px;
     margin-top: 20px;

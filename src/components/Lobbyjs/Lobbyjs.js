@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import Navbar from '../Navbar/Navbar';
+import Lobbyhome from './Lobbyhome/Lobbyhome';
+import {
+    BrowserRouter,
+    Switch,
+    Route
+} from 'react-router-dom';
 
 class Lobbyjs extends Component {
 
@@ -8,9 +15,14 @@ class Lobbyjs extends Component {
 
     render() {
         return(
-            <div>
-                <p>This is the homepage for jobseekers</p>
-            </div>
+            <BrowserRouter>
+                <div>
+                    <Navbar loggedin={true} />
+                    <Switch>
+                        <Route path="/jobseeker" exact component={Lobbyhome} />
+                    </Switch>
+                </div>
+            </BrowserRouter>
         );
     }
 
