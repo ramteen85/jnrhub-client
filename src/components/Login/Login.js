@@ -52,27 +52,17 @@ class Login extends Component {
     render() {
         return(
             <div className={styles.container}>
-              <form onSubmit={this.loginHandler}>
+
+                <form onSubmit={this.loginHandler}>
                     <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
                     <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
-                    <button type="submit">Login</button>
+                    <button className = {styles.button} type="submit">Login</button>
                 </form>
 
-                <div className={styles.invalidLogin}>
-
-                Error: Please fill in all fields
+                <div className={styles.invalidlogin}>
+                    Error! Please fill in all fields!
                 </div>
-
-
-
-
-
             </div>
-
-
-
-
-
         );
     }
 

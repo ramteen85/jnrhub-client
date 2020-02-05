@@ -7,24 +7,25 @@ import Lobbyemp from './components/Lobbyemp/Lobbyemp';
 import Lobbyjs from './components/Lobbyjs/Lobbyjs';
 
 import {
-  BrowserRouter,
+  HashRouter as Router,
   Switch,
   Route
 } from 'react-router-dom';
 
 function App() { 
   return (
-    <BrowserRouter>
+    <Router>
       <div className="App">
-          <Navbar />
+          <Navbar loggedin={true} />
           <Switch>
-            <Route path="/register" exact component={Register} />
             <Route path="/" exact component={Login} />
+            <Route path="/register" exact component={Register} />
             <Route path="/jobseeker" exact component={Lobbyjs} />
+            {/* <Route path="/jobseeker" exact component={Lobbyhome} /> */}
             <Route path="/employer" exact component={Lobbyemp} />
           </Switch>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 

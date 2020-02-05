@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Navbar.module.css';
+import {Link, withRouter} from 'react-router-dom';
 
 class Navbar extends Component {
 
@@ -12,13 +13,21 @@ class Navbar extends Component {
         this.state.loggedin = this.props.loggedin;
     }
 
+    logoutHandler = () => {
+        this.loggedin=false
+        this.props.history.push('/');
+    }
+
     render() {
         return(
+<<<<<<< HEAD
             <div className={styles.navwrapper}>
-                { this.state.loggedin 
+                { this.state.loggedin
                 ?
                 <nav className={styles.loggedinnav}>
+                    <p className={styles.brand}>&lt;Jnr/Hub&gt;</p>
                     <ul>
+<<<<<<< HEAD
                         <li><a href="/">Dashboard</a></li>
                         <li><a href="/">Job Board</a></li>
                         <li><a href="/">Profile</a></li>
@@ -29,7 +38,7 @@ class Navbar extends Component {
                 <nav>
                     <ul>
                         <li>
-                            <p className={styles.brand}>&lt;Jnr/Hub&gt;</p>
+
                         </li>
                     </ul>
                 </nav>
@@ -40,4 +49,8 @@ class Navbar extends Component {
 
 }
 
+<<<<<<< HEAD
 export default Navbar;
+=======
+export default withRouter(Navbar);
+>>>>>>> 355fd7ed684f90a18094f0e01bd29e8fc67b93d9
