@@ -58,9 +58,9 @@ class Login extends Component {
                     <button type="submit">Login</button>
                 </form>
 
-                <div className="invalidlogin">
+                <div className={styles.invalidLogin}>
 
-                 error:please fill in all fields
+                Error: Please fill in all fields
                 </div>
 
 

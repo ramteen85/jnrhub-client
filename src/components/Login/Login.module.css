@@ -17,15 +17,10 @@ input {
     font-family: inherit;
 }
 
-.invalidlogin{
+.invalidLogin {
   color: red;
   text-align: center;
   font-size: 15px;
   margin-top: 30px;
   font-family: 'Inconsolata', monospace;
-
-
-
-
-
 }
