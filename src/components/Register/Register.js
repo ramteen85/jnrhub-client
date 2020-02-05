@@ -8,9 +8,9 @@ class Register extends Component {
     state = {
         submitted: false,
         emailError: styles.errorMsg,
-
-
-      };
+        emailInvalid: "",
+        fullnameInvalid: ""
+    };
 
 
 
@@ -205,9 +205,19 @@ class Register extends Component {
                     <h1>Register Now</h1>
                     <form onSubmit={this.handleSubmit}>
                         <input onChange={this.inputChangeHandler} type="email" placeholder="Your Email" name="email" id="email" className={this.state.emailInvalid} />
+                        { this.state.emailInvalid.startsWith("Register_error")
+                        ? 
                         <label className={this.state.emailError}>Please enter your email</label>
+                        :
+                        ""
+                        }
                         <input onChange={this.inputChangeHandler} type="text" placeholder="Your Full Name" name="fullname" id="fullname" className={this.state.fullnameInvalid} />
+                        { this.state.fullnameInvalid.startsWith("Register_error")
+                        ?
                         <label className={styles.errorMsg}>Please enter your name</label>
+                        :
+                        ""
+                        }
                         <input onChange={this.inputChangeHandler} type="text" placeholder="Phone Number" name="phone" id="phone" className={this.state.phoneInvalid} />
                           <label className={styles.errorMsg}>Please enter your number</label>
                         <input onChange={this.inputChangeHandler} type="text" placeholder="Suburb"
