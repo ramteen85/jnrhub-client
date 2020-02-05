@@ -17,22 +17,53 @@ class Login extends Component {
 
         const username = this.state.username;
         const password = this.state.password;
-
-        axios.post('http://localhost:3000/login', {
-            email: username,
-            password: password
-        }).then(res => {
-            console.log(res);
-            if(res.data.user_type === "jobseeker") {
-                // redirect to jobseeker component
-                this.props.history.push(`/jobseeker`);
-            } else if(res.data.user_type === "employer") {
-                // redirect_to employer component
-                this.props.history.push(`/employer`);
+        const request = {
+            "auth": {
+                "email": username,
+                "password": password
             }
+        };
+
+        // axios.post('http://localhost:3000/login', { request })
+        axios.post('http://localhost:3000/user_token', request)
+        .then(res => 
+        {
+            //save token
+            localStorage.setItem("jwt", res.data.jwt);
+            let token = `Bearer ${localStorage.getItem("jwt")}`;
+            let config = {
+                headers: {
+                    "Authorization": token
+                }
+            };
+
+            //get user ID
+
+            axios.post(`http://localhost:3000/users/getuser`, {
+                user: username
+            }, config)
+            .then(res => {
+                //got ID
+                console.log(res);
+                if(res.data.user_type === "jobseeker") {
+                    // redirect to jobseeker component
+                    this.props.history.push(`/jobseeker`);
+
+                } else if(res.data.user_type === "employer") {
+                    // redirect_to employer component
+                    this.props.history.push(`/employer`);
+                }
+            })
+            .catch(err => {
+                // didnt get ID
+                console.log(err);
+            })
+
+
         }).catch(err => {
             //TODO: display error message in login screen
-            console.log(`RESPONSE: ${err}`);
+            console.log('ERROR: ');
+            console.log(err);
         });
 
         //TODO:

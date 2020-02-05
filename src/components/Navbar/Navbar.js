@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 import styles from './Navbar.module.css';
-import {Link, withRouter} from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 class Navbar extends Component {
     state = {
+        loggedin: this.props.loggedin
     }
-    constructor(props) {
-        super(props);
-    }
+
     render() {
         return(
             <div className={styles.navwrapper}>
                 <nav className={styles.loggedinnav}>
                     <p className={styles.brand}>&lt;Jnr/Hub&gt;</p>
                     <ul>
-                        <li><a href="/">Dashboard</a></li>
-                        <li><a href="/">Job Board</a></li>
-                        <li><a href="/">Profile</a></li>
-                        <li><a href="/">Logout</a></li>
+                        <li><Link to="/">Dashboard</Link></li>
+                        <li><Link to="/">Job Board</Link></li>
+                        <li><Link to="/">Profile</Link></li>
+                        <li><Link to="/logout" onClick={this.props.Logout}>Logout</Link></li>
                     </ul>
                 </nav>
             </div>
         )
     }
 }
-export default withRouter(Navbar);
+export default Navbar;
