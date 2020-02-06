@@ -49,10 +49,16 @@ button {
     color: white;
     font-family: 18px;
     font-weight: bold;
-    max-width: 200px;
+    width: 80px;
+    text-align: center;
     margin: 0 auto;
     border-radius: 18px 18px 18px 18px;
-    font-family: 'Inconsolata', monospace
+    font-family: 'Inconsolata', monospace;
+    transition: 1s;
+}
+
+button:hover {
+  width: 100px;
 }
 
 .subtitle {
