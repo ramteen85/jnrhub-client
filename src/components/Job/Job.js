@@ -11,7 +11,7 @@ class Job extends Component {
 
     return(
       <div className={styles.container}>
-      Hello World
+        
       </div>
     )
   }
