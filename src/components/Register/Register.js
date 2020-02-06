@@ -274,7 +274,7 @@ class Register extends Component {
                         ""
                         }
 
-                        <button type="submit" className={styles.loginregisterbutton}>Register</button>
+                        <button type="submit" className={styles.loginregisterbutton}>Create Account</button>
                       </form>
                     </div>
                     </div>

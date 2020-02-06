@@ -59,7 +59,7 @@ form {
     color: white;
     font-family: 18px;
     font-weight: bold;
-    width: 80px;
+    width: 100px;
     text-align: center;
     margin: 0 auto;
     border-radius: 18px 18px 18px 18px;
@@ -68,7 +68,7 @@ form {
 }
 
 button:hover {
-  width: 100px;
+  width: 130px;
 }
 
 .registerform {
