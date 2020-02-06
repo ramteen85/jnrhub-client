@@ -3,7 +3,7 @@ import styles from './Navbar.module.css';
 import {  Link } from 'react-router-dom';
 class Navbar extends Component {
     state = {
-        loggedin: this.props.loggedin
+        loggedin: true
     }
 
     render() {
@@ -12,10 +12,16 @@ class Navbar extends Component {
                 <nav className={styles.mainnav}>
                     <p className={styles.brand}>&lt;Jnr/Hub&gt;</p>
                     <ul>
-                        <li><Link to="/">Dashboard</Link></li>
-                        <li><Link to="/">Job Board</Link></li>
-                        <li><Link to="/">Profile</Link></li>
-                        <li><Link to="/logout" onClick={this.props.Logout}>Logout</Link></li>
+                        <li><Link to="/">Home</Link></li>
+                        { this.state.loggedin
+                        ?
+                        <div className={styles.inline}>
+                            <li><Link to="/">Job Board</Link></li>
+                            <li><Link to="/logout">Logout</Link></li>
+                        </div>
+                        :
+                        <li><Link to="/register">Register</Link></li>
+                        }
                     </ul>
                 </nav>
             </div>

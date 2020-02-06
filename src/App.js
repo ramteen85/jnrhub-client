@@ -24,11 +24,15 @@ class App extends Component {
     this.setState({ loggedin: false });
   }
 
+  login = () => {
+    this.setState({ loggedin: true });
+  }
+
   render() {
     return (
       <Router>
         <div className="App">
-            <Navbar loggedin={this.state.loggedin} logout={this.logout} />
+            <Navbar loggedin={this.state.loggedin} logout={this.logout} login={this.login} />
             <Switch>
               <Route path="/" exact component={Login} />
               <Route path="/register" exact component={Register} />

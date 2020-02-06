@@ -207,7 +207,6 @@ class Register extends Component {
     render() {
         return(
             <div className="container">
-                <Navbar loggedin="false" />
                 { this.state.submitted === false
                 ?
                 <div className={styles.regForm}>
