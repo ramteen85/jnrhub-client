@@ -27,6 +27,13 @@ class App extends Component {
   //   this.setState({ loggedin: true });
   // }
 
+  componentDidMount() {
+    if(localStorage.getItem("jwt")) {
+      this.setState({ loggedin: true });
+    }
+  }
+  
+
   setLoginStatus = (loggedIn) => {
     this.setState({ loggedin: loggedIn });
   }

@@ -16,9 +16,6 @@ class Login extends Component {
         // this.state.username
         e.preventDefault();
 
-
-
-
         // axios.post('http://localhost:3000/login', { request })
         axios.post('http://localhost:3000/user_token', {
             auth: {
