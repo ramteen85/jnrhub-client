@@ -83,7 +83,8 @@ class Login extends Component {
     render() {
         return(
             <div className={styles.container}>
-
+              <div className={styles.loginform}>
+              <h2>Log In</h2>
                 <form onSubmit={this.loginHandler}>
                     <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
                     <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
@@ -99,6 +100,7 @@ class Login extends Component {
                 ""
                 }
 
+            </div>
             </div>
         );
     }
