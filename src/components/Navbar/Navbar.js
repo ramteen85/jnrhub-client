@@ -22,7 +22,7 @@ class Navbar extends Component {
                         ?   
                         <div className={styles.inline}>
                             <li><Link to="/">Job Board</Link></li>
-                            <li><button className={styles.oddOneOut} onClick={ this.handleLogout }>Logout</button></li>
+                            <li><a className={styles.oddOneOut} onClick={ this.handleLogout }>Logout</a></li>
                         </div>
                         :
                         <li><Link to="/register">Register</Link></li>

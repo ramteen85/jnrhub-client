@@ -32,9 +32,7 @@ nav {
 
 .mainnav ul li a,
 .mainnav ul li a:after,
-.mainnav ul li a:before,
-.mainnav ul li button:before,
-.mainnav il li button:after {
+.mainnav ul li a:before {
   transition: all .5s;
 }
 
@@ -79,13 +77,5 @@ nav {
 
 .oddOneOut {
     cursor: pointer;
-    border: none;
-    background: none;
-    display: inline-block;
     font-family: inherit;
-    margin: auto;
-    position: relative;
-    top: 6px;
-    color: white;
-    opacity: 0.7;
 }
