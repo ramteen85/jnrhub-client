@@ -5,6 +5,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Lobbyemp from './components/Lobbyemp/Lobbyemp';
 import Lobbyjs from './components/Lobbyjs/Lobbyjs';
+import Jobboard from './components/Jobboard/Jobboard';
 
 
 import {
@@ -32,7 +33,7 @@ class App extends Component {
       this.setState({ loggedin: true });
     }
   }
-  
+
 
   setLoginStatus = (loggedIn) => {
     this.setState({ loggedin: loggedIn });
@@ -48,6 +49,7 @@ class App extends Component {
       <Router>
         <div className="App">
             <Route path="/" render={(props) => <Navbar {...props} loggedin={this.state.loggedin} onLogout={this.performLogout}  />} />
+            <Route path="/jobboard" exact component={Jobboard} />
             <Switch>
               <Route path="/" exact render={ (props) => <Login {...props} onLogin={this.setLoginStatus} /> } />
               <Route path="/register" exact component={Register} />

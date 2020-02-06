@@ -40,7 +40,7 @@ form {
     font-family: 'Inconsolata', monospace;
 }
 
-button {
+  button {
     display: inline-block;
     text-align: center;
     border: none;
