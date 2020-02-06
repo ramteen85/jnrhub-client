@@ -25,8 +25,13 @@ class Navbar extends Component {
                             <li><a className={styles.oddOneOut} onClick={ this.handleLogout }>Logout</a></li>
                         </div>
                         :
+<<<<<<< HEAD
+                        <li><Link to="/register">Register</Link>
+                      </li>
+=======
                         <li><Link to="/register">Register</Link></li>
                         //  onClick={() => this.setState({ loggedin: false })}
+>>>>>>> c9a1933905d6f54aef758bd6948604e6174ccb47
                         }
                     </ul>
                 </nav>
