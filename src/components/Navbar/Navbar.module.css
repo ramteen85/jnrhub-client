@@ -73,4 +73,7 @@ nav {
 .inline {
     display: flex;
     flex-direction: row;
+    font-family: 'Inconsolata', monospace;
+
+
 }

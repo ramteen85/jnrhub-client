@@ -20,7 +20,8 @@ class Navbar extends Component {
                             <li><Link to="/logout" onClick={() => this.setState({ loggedin: false })}>Logout</Link></li>
                         </div>
                         :
-                        <li><Link to="/register">Register</Link></li>
+                        <li><Link to="/register">Register</Link>
+                      </li>
                         }
                     </ul>
                 </nav>

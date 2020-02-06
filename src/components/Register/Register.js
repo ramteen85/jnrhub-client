@@ -298,6 +298,7 @@ class Register extends Component {
                         </div>
                         <div className={styles.jobseeker} onClick={this.jobseekerHandler}>
                           <label>A Job Seeker</label>
+
                           <img src="/assets/img/bludger.jpg" alt="dole bludging job seeker"/>
 
                         </div>
