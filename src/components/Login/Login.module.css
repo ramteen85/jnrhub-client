@@ -27,13 +27,13 @@ input {
   font-family: 'Inconsolata', monospace;
 }
 .loginform {
-  margin-top: 50%;
+  margin-top: 20%;
   background-color: #ddd;
-  padding: 20px;
+  padding: 10px;
 }
 .loginform h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .loginregisterbutton a {

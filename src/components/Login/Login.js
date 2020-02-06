@@ -88,7 +88,8 @@ class Login extends Component {
                 <form onSubmit={this.loginHandler}>
                     <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
                     <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
-                    <button className = {styles.loginregisterbutton} type="submit">Login</button><br/>
+                    <button className = {styles.loginregisterbutton}
+                    type="submit">Login</button><br/>
                     <button className={styles.button}><a href="/#/register">Register</a></button>
                 </form>
 
