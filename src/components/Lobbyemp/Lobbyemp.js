@@ -9,6 +9,8 @@ class Lobbyemp extends Component {
     render() {
         return(
             <div>
+                <br/>
+                This is the employers home page
             </div>
         );
     }

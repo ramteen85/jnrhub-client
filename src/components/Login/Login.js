@@ -12,6 +12,15 @@ class Login extends Component {
 
     }
 
+    constructor(props) {
+        super(props);
+        if(this.props.loggedin) {
+            console.log(this.props);
+            console.log(this.props.usrType);
+            this.props.history.push("/" + localStorage.getItem("usrType"));
+        }
+    }
+
     loginHandler = (e) => {
         // this.state.username
         e.preventDefault();
@@ -46,10 +55,12 @@ class Login extends Component {
                 console.log(res);
                 if(res.data.user_type === "jobseeker") {
                     // redirect to jobseeker component
+                    localStorage.setItem("usrType", "jobseeker");
                     this.props.history.push(`/jobseeker`);
 
                 } else if(res.data.user_type === "employer") {
                     // redirect_to employer component
+                    localStorage.setItem("usrType", "employer");
                     this.props.history.push(`/employer`);
                 }
             })

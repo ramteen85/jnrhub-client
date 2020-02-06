@@ -20,7 +20,8 @@ import {
 class App extends Component {
 
   state = {
-    loggedin: false
+    loggedin: false,
+    userType: ''
   }
 
   // logout = () => {
@@ -45,6 +46,12 @@ class App extends Component {
   performLogout = () => {
     this.setState({ loggedin: false });
     localStorage.removeItem('jwt');
+    localStorage.removeItem('usrType');
+    this.props.history.push('/');
+  }
+
+  setType = (type) => {
+    this.setState({userType: type});
   }
 
   render() {
@@ -52,10 +59,10 @@ class App extends Component {
       <Router>
         <div className="App">
             <Route path="/" render={(props) => <Navbar {...props} loggedin={this.state.loggedin} onLogout={this.performLogout}  />} />
-            <Route path="/jobboard" exact component={Jobboard} />
+            <Route path="/jobboard" exact render={(props) => <Jobboard loggedIn={this.state.loggedin} {...props} />} />
             <Route path="/job" exact component={Job} />
             <Switch>
-              <Route path="/" exact render={ (props) => <Login {...props} onLogin={this.setLoginStatus} /> } />
+              <Route path="/" exact render={ (props) => <Login {...props} loggedin={this.state.loggedin}  onLogin={this.setLoginStatus} /> } />
               <Route path="/register" exact render={ (props) => <Register {...props} onLogin={this.setLoginStatus} /> } />
               <Route path="/jobseeker" exact component={Lobbyjs} />
               <Route path="/employer" exact component={Lobbyemp} />

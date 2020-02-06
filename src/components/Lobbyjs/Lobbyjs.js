@@ -9,7 +9,8 @@ class Lobbyjs extends Component {
     render() {
         return(
             <div>
-                
+                <br/>
+                This is the job seekers home page
             </div>
         );
     }
