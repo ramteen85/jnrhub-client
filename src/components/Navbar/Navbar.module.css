@@ -41,3 +41,8 @@ nav {
     font-family: 'Inconsolata', monospace;
     margin-top: 0;
 }
+
+.inline {
+    display: flex;
+    flex-direction: row;
+}
