@@ -29,7 +29,7 @@ class Login extends Component {
 
         // axios.post('http://localhost:3000/login', { request })
         axios.post('http://localhost:3000/user_token', request)
-        .then(res => 
+        .then(res =>
         {
             //save token
             localStorage.setItem("jwt", res.data.jwt);
@@ -98,7 +98,7 @@ class Login extends Component {
                 { this.state.invalidLogin
                 ?
                 <div className={styles.invalidLogin}>
-                    Error! Please fill in all fields!
+                    Invalid Login
                 </div>
                 :
                 ""
