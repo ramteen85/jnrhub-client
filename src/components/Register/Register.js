@@ -34,7 +34,7 @@ class Register extends Component {
                 country: this.state.country,
                 website: this.state.website,
                 about: this.state.about,
-                user_type: "employer",
+                user_type: userPath,
                 admin: false,
                 password: this.state.password,
                 password_confirmation: this.state.confirm_password
@@ -54,11 +54,13 @@ class Register extends Component {
             }})
             .then(res => {
                 // save token
-                console.log("token: " + res);
+                console.log(res);
                 localStorage.setItem("jwt", res.data.jwt);
+                // get user id later and save it into local storage
                 this.props.onLogin(true);
 
                 // redirect
+                localStorage.setItem("usrType", userPath);
                 this.props.history.push(`/${userPath}`);
             })
             .catch(err => {
@@ -194,7 +196,7 @@ class Register extends Component {
 
     render() {
         return(
-            <div className="container">
+            <div className={styles.container}>
                 { this.state.submitted === false
                 ?
                 <div className={styles.registerform}>

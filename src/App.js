@@ -7,7 +7,11 @@ import Lobbyemp from './components/Lobbyemp/Lobbyemp';
 import Lobbyjs from './components/Lobbyjs/Lobbyjs';
 import Jobboard from './components/Jobboard/Jobboard';
 import Job from './components/Job/Job';
+<<<<<<< HEAD
 import Profile from './components/Profile/Profile';
+=======
+import Empjob from './components/Empjob/Empjob';
+>>>>>>> 33667c5418bb2674daa2092cb00ef42cd4e86d4d
 
 
 
@@ -21,7 +25,8 @@ import {
 class App extends Component {
 
   state = {
-    loggedin: false
+    loggedin: false,
+    userType: ''
   }
 
   // logout = () => {
@@ -46,6 +51,13 @@ class App extends Component {
   performLogout = () => {
     this.setState({ loggedin: false });
     localStorage.removeItem('jwt');
+    localStorage.removeItem('usrType');
+    // this.props.history.push('/');
+    window.location.replace("/"); // maybe we can find a better way to redirect?
+  }
+
+  setType = (type) => {
+    this.setState({userType: type});
   }
 
   render() {
@@ -53,14 +65,20 @@ class App extends Component {
       <Router>
         <div className="App">
             <Route path="/" render={(props) => <Navbar {...props} loggedin={this.state.loggedin} onLogout={this.performLogout}  />} />
-            <Route path="/jobboard" exact component={Jobboard} />
+            <Route path="/jobboard" exact render={(props) => <Jobboard loggedIn={this.state.loggedin} {...props} />} />
             <Route path="/job" exact component={Job} />
+            <Route path="/empjob" exact component={Empjob} />
             <Switch>
-              <Route path="/" exact render={ (props) => <Login {...props} onLogin={this.setLoginStatus} /> } />
+              <Route path="/" exact render={ (props) => <Login {...props} loggedin={this.state.loggedin}  onLogin={this.setLoginStatus} /> } />
               <Route path="/register" exact render={ (props) => <Register {...props} onLogin={this.setLoginStatus} /> } />
+<<<<<<< HEAD
               <Route path="/jobseeker" exact component={Lobbyjs} />
               <Route path="/employer" exact component={Lobbyemp} />
               <Route path="/profile" exact component={Profile} />
+=======
+    <Route path="/jobseeker" exact render={(props) => <Lobbyjs {...props} /> } />
+              <Route path="/employer" exact render={ (props) => <Lobbyemp {...props} /> } />
+>>>>>>> 33667c5418bb2674daa2092cb00ef42cd4e86d4d
               {
               // <Route path="/logout" exact component={Logout} />
               }

@@ -8,6 +8,13 @@ class Jobboard extends Component {
     jobs: []
   }
 
+  constructor(props) {
+    super(props);
+    if(this.props.loggedIn === false) {
+      this.props.history.push("/");
+    }
+  }
+
   componentDidMount() {
     axios.get('http://localhost:3000/jobs')
     .then(res => {
