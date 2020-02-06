@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {withRouter} from 'react-router-dom';
+// import {withRouter} from 'react-router-dom';
 import styles from "./Login.module.css";
 import axios from 'axios';
 
@@ -18,22 +18,21 @@ class Login extends Component {
 
 
 
-        const username = this.state.username;
-        const password = this.state.password;
-        const request = {
-            "auth": {
-                "email": username,
-                "password": password
-            }
-        };
 
         // axios.post('http://localhost:3000/login', { request })
-        axios.post('http://localhost:3000/user_token', request)
+        axios.post('http://localhost:3000/user_token', {
+            auth: {
+                email: this.state.username,
+                password: this.state.password
+        }})
         .then(res =>
         {
+            // LOGIN SUCCESSFUl
             //save token
             localStorage.setItem("jwt", res.data.jwt);
             let token = `Bearer ${localStorage.getItem("jwt")}`;
+            this.props.onLogin(true);  // runs setLoginStatus() in parent component App.js (to update nav)
+
             let config = {
                 headers: {
                     "Authorization": token
@@ -43,7 +42,7 @@ class Login extends Component {
             //get user ID
 
             axios.post(`http://localhost:3000/users/getuser`, {
-                user: username
+                user: this.state.username
             }, config)
             .then(res => {
                 //got ID
@@ -59,15 +58,14 @@ class Login extends Component {
             })
             .catch(err => {
                 // didnt get ID
-                console.log(err);
+                console.log('getuser error', err);
                 this.setState({invalidLogin: true});
             })
 
 
         }).catch(err => {
             //TODO: display error message in login screen
-            console.log('ERROR: ');
-            console.log(err);
+            console.log('token auth error', err);
             this.setState({invalidLogin: true});
         });
 
@@ -110,4 +108,5 @@ class Login extends Component {
 
 }
 
-export default withRouter(Login);
+// export default withRouter(Login);
+export default Login;
