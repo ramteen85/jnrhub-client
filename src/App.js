@@ -6,6 +6,9 @@ import Register from './components/Register/Register';
 import Lobbyemp from './components/Lobbyemp/Lobbyemp';
 import Lobbyjs from './components/Lobbyjs/Lobbyjs';
 import Jobboard from './components/Jobboard/Jobboard';
+import Job from './components/Job/Job';
+
+
 
 
 import {
@@ -50,6 +53,7 @@ class App extends Component {
         <div className="App">
             <Route path="/" render={(props) => <Navbar {...props} loggedin={this.state.loggedin} onLogout={this.performLogout}  />} />
             <Route path="/jobboard" exact component={Jobboard} />
+            <Route path="/job" exact component={Job} />
             <Switch>
               <Route path="/" exact render={ (props) => <Login {...props} onLogin={this.setLoginStatus} /> } />
               <Route path="/register" exact render={ (props) => <Register {...props} onLogin={this.setLoginStatus} /> } />
