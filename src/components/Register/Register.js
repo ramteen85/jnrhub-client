@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import styles from  "./Register.module.css";
 import axios from 'axios';
-import Navbar from '../Navbar/Navbar';
 
 class Register extends Component {
 
