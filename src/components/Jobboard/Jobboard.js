@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Jobboard.module.css';
+import axios from 'axios';
 
 class Jobboard extends Component {
 
@@ -9,6 +10,21 @@ class Jobboard extends Component {
 
   render() {
 
+    const jobs = axios.get('http://localhost:3000/jobs')
+    .then(res => {
+      console.log(res.data);
+      // res.data.map((job, key) => {
+      //   <tr key={job.id}>
+      //     <td className={styles.jobcolumn}>{job.company_name}</td>
+      //     <td className={styles.jobcolumn}>{job.location}</td>
+      //     <td className={styles.jobcolumn}>{job.role}</td>
+      //   </tr>
+      // });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
     return(
       <div className={styles.container}>
         <div className={styles.mainheader}>
@@ -16,9 +32,11 @@ class Jobboard extends Component {
         </div>
         <table className={styles.jobboard}>
           <thead>
+            <tr>
               <th>Company</th>
               <th>Location</th>
               <th>Role</th>
+            </tr>
           </thead>
           <tbody>
           <tr className={styles.job}>
