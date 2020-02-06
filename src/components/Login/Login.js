@@ -84,7 +84,7 @@ class Login extends Component {
         return(
             <div className={styles.container}>
               <div className={styles.loginform}>
-              <h2>Log In</h2>
+              <h2>Log In</h2><hr/><br/>
                 <form onSubmit={this.loginHandler}>
                     <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
                     <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>

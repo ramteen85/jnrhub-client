@@ -197,8 +197,9 @@ class Register extends Component {
             <div className="container">
                 { this.state.submitted === false
                 ?
+                <div className={styles.registerform}>
                 <div className={styles.regForm}>
-                    <h1>Register Now</h1>
+                    <h2>Register Now</h2><hr/><br/>
                     <form onSubmit={this.handleSubmit}>
                         <input onChange={this.inputChangeHandler} type="email" placeholder="Your Email" name="email" id="email" className={this.state.emailInvalid} />
                         { this.state.emailInvalid.startsWith("Register_error")
@@ -275,6 +276,7 @@ class Register extends Component {
 
                         <button type="submit" className={styles.loginregisterbutton}>Register</button>
                       </form>
+                    </div>
                     </div>
                     :
                     <div>
