@@ -19,42 +19,11 @@ class Register extends Component {
 
     };
 
-
-
-    jobseekerHandler = (e) => {
-        this.setState({userType: "jobseeker"});
+    memberHandler = (e, userPath) => {
         console.log(e);
         console.log(this.state);
-        axios.post('http://localhost:3000/users', {
-            user: {
-                email: this.state.email,
-                full_name: this.state.fullname,
-                phone_no: this.state.phone,
-                suburb: this.state.suburb,
-                state: this.state.state,
-                country: this.state.country,
-                website: this.state.website,
-                about: this.state.about,
-                user_type: "jobseeker",
-                admin: false,
-                password: this.state.password,
-                password_confirmation: this.state.confirm_password
-            }
-        })
-        .then(res => {
-            console.log(res);
-            // TODO: redirect to the jobseekers page
-            this.props.history.push(`/jobseeker`);
-        })
-        .catch(err => {
-            console.log(err);
-        });
-    }
 
-    employerHandler = (e) => {
-        this.setState({userType: "employer"});
-        console.log(e);
-        console.log(this.state);
+
         axios.post('http://localhost:3000/users', {
             user: {
                 email: this.state.email,
@@ -76,10 +45,30 @@ class Register extends Component {
             // account created successfully!
             // TODO: perform login for new account, using knock route
             // todo: redirect to employers page
-            this.props.history.push(`/employer`);
+            // this.props.history.push(`/employer`);
+
+            axios.post('http://localhost:3000/user_token', {
+            auth: {
+                email: this.state.email,
+                password: this.state.password
+            }})
+            .then(res => {
+                // save token
+                console.log("token: " + res);
+                localStorage.setItem("jwt", res.data.jwt);
+                this.props.onLogin(true);
+
+                // redirect
+                this.props.history.push(`/${userPath}`);
+            })
+            .catch(err => {
+                // could not get token
+                console.log(err);
+            });
 
         })
         .catch(err => {
+            // could not create user
             console.log(err);
         });
     }
@@ -292,11 +281,11 @@ class Register extends Component {
                       <h2 className={styles.subtitle}>Are you:</h2>
 
                       <div className={styles.container}>
-                        <div className={styles.employer} onClick={this.employerHandler}>
+                        <div className={styles.employer} onClick={(e) => this.memberHandler(e, "employer")}>
                           <label>An Employer</label>
                           <img src="/assets/img/boss.jpeg" alt="The big boss"/>
                         </div>
-                        <div className={styles.jobseeker} onClick={this.jobseekerHandler}>
+                        <div className={styles.jobseeker} onClick={(e) => this.memberHandler(e, "jobseeker")}>
                           <label>A Job Seeker</label>
 
                           <img src="/assets/img/bludger.jpg" alt="dole bludging job seeker"/>

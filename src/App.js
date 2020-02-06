@@ -52,7 +52,7 @@ class App extends Component {
             <Route path="/jobboard" exact component={Jobboard} />
             <Switch>
               <Route path="/" exact render={ (props) => <Login {...props} onLogin={this.setLoginStatus} /> } />
-              <Route path="/register" exact component={Register} />
+              <Route path="/register" exact render={ (props) => <Register {...props} onLogin={this.setLoginStatus} /> } />
               <Route path="/jobseeker" exact component={Lobbyjs} />
               <Route path="/employer" exact component={Lobbyemp} />
               {
