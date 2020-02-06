@@ -16,9 +16,11 @@ class Jobboard extends Component {
         </div>
         <table className={styles.jobboard}>
           <thead>
+            <tr>
               <th>Company</th>
               <th>Location</th>
               <th>Role</th>
+            </tr>
           </thead>
           <tbody>
           <tr className={styles.job}>
