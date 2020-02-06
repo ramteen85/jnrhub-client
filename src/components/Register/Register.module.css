@@ -43,7 +43,7 @@ button {
     display: inline-block;
     text-align: center;
     border: none;
-    background: purple;
+    background: rgb(171, 96, 196);
     padding: 10px;
     color: white;
     font-family: 18px;
