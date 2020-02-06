@@ -19,15 +19,16 @@ h1 {
 input,
 button,
 textarea {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 15px;
-    padding: 3px;
+    padding: 5px;
     font-family: 'Inconsolata', monospace;
     border: 1px solid rgb(238, 238, 238);
 }
 
 textarea {
     margin: 0 auto;
+    margin-bottom: 10px;
     display: block;
     font-family: 'Inconsolata', monospace;
     resize: none;
@@ -48,10 +49,16 @@ button {
     color: white;
     font-family: 18px;
     font-weight: bold;
-    max-width: 200px;
+    width: 80px;
+    text-align: center;
     margin: 0 auto;
     border-radius: 18px 18px 18px 18px;
-    font-family: 'Inconsolata', monospace
+    font-family: 'Inconsolata', monospace;
+    transition: 1s;
+}
+
+button:hover {
+  width: 100px;
 }
 
 .subtitle {
