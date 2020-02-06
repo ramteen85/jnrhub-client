@@ -40,8 +40,6 @@ class Login extends Component {
                 }
             };
 
-            
-
             //get user ID
 
             axios.post(`http://localhost:3000/users/getuser`, {
