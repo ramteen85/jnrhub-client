@@ -14,8 +14,7 @@ import Job from './components/Job/Job';
 import {
   HashRouter as Router,
   Switch,
-  Route,
-  Redirect
+  Route
 } from 'react-router-dom';
 
 class App extends Component {
@@ -48,8 +47,8 @@ class App extends Component {
     this.setState({ loggedin: false });
     localStorage.removeItem('jwt');
     localStorage.removeItem('usrType');
-    // still need to redirect home but doesnt work here
     // this.props.history.push('/');
+    window.location.replace("/"); // maybe we can find a better way to redirect?
   }
 
   setType = (type) => {
