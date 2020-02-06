@@ -9,7 +9,7 @@ class Navbar extends Component {
     render() {
         return(
             <div className={styles.navwrapper}>
-                <nav className={styles.loggedinnav}>
+                <nav className={styles.mainnav}>
                     <p className={styles.brand}>&lt;Jnr/Hub&gt;</p>
                     <ul>
                         <li><Link to="/">Dashboard</Link></li>

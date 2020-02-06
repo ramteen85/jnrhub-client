@@ -1,18 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
 
 nav {
-    background-color: bisque;
+    background-color: rgb(171, 96, 196);
 }
-
-.loggedoutnav {
-    margin-bottom: 30px;
-}
-
-.loggedoutnav ul {
-    list-style: none;
-}
-
-.loggedinnav ul {
+.mainnav ul {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -21,15 +12,15 @@ nav {
     padding: 30px;
 }
 
-.loggedinnav ul li {
+.mainnav ul li {
     margin-right: 10px;
 }
 
-.loggedinnav ul li a {
+.mainnav ul li a {
     text-decoration: none;
 }
 
-.loggedinnav ul li a:hover {
+.mainnav ul li a:hover {
     color: red;
     text-decoration: underline;
 }
