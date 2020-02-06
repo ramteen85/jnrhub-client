@@ -6,6 +6,13 @@ class Lobbyjs extends Component {
 
     }
 
+    constructor(props) {
+        super(props);
+        if(!localStorage.getItem("jwt")) {
+            this.props.history.push("/");
+        }
+    }
+
     render() {
         return(
             <div>

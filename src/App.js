@@ -65,8 +65,8 @@ class App extends Component {
             <Switch>
               <Route path="/" exact render={ (props) => <Login {...props} loggedin={this.state.loggedin}  onLogin={this.setLoginStatus} /> } />
               <Route path="/register" exact render={ (props) => <Register {...props} onLogin={this.setLoginStatus} /> } />
-              <Route path="/jobseeker" exact component={Lobbyjs} />
-              <Route path="/employer" exact component={Lobbyemp} />
+    <Route path="/jobseeker" exact render={(props) => <Lobbyjs {...props} /> } />
+              <Route path="/employer" exact render={ (props) => <Lobbyemp {...props} /> } />
               {
               // <Route path="/logout" exact component={Logout} />
               }
