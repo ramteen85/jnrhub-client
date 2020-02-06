@@ -50,6 +50,7 @@ button {
     font-weight: bold;
     max-width: 200px;
     margin: 0 auto;
+    border-radius: 18px 18px 18px 18px;
     font-family: 'Inconsolata', monospace
 }
 
@@ -76,14 +77,17 @@ button {
     justify-self: center;
     overflow: hidden;
     padding: 10px;
+    font-family: 'Inconsolata', monospace
+    
 }
 
 .employer:hover,
 .jobseeker:hover {
     cursor: pointer;
     flex: 1.1;
-    box-shadow: 2px 4px #888888;
+    box-shadow: 13px 24px 31px -6px rgba(0,0,0,0.75);
     border: 2px solid blue;
+    border-radius: 18px 18px 18px 18px;
 }
 
 .employer {
