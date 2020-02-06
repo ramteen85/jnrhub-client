@@ -2,13 +2,8 @@ import React, { Component } from 'react';
 import styles from './Navbar.module.css';
 import {  Link } from 'react-router-dom';
 class Navbar extends Component {
-    // state = {
-    //     loggedin: true
-    // }
-
-    handleLogout = () => {
-        this.props.onLogout();
-        this.props.history.push( '/' );
+    state = {
+        loggedin: false
     }
 
     render() {
@@ -18,20 +13,14 @@ class Navbar extends Component {
                     <p className={styles.brand}>&lt;Jnr/Hub&gt;</p>
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        { this.props.loggedin
-                        ?   
+                        { this.state.loggedin
+                        ?
                         <div className={styles.inline}>
                             <li><Link to="/">Job Board</Link></li>
-                            <li><a className={styles.oddOneOut} onClick={ this.handleLogout }>Logout</a></li>
+                            <li><Link to="/logout" onClick={() => this.setState({ loggedin: false })}>Logout</Link></li>
                         </div>
                         :
-<<<<<<< HEAD
-                        <li><Link to="/register">Register</Link>
-                      </li>
-=======
                         <li><Link to="/register">Register</Link></li>
-                        //  onClick={() => this.setState({ loggedin: false })}
->>>>>>> c9a1933905d6f54aef758bd6948604e6174ccb47
                         }
                     </ul>
                 </nav>
