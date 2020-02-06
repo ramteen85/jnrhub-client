@@ -7,6 +7,7 @@ import Lobbyemp from './components/Lobbyemp/Lobbyemp';
 import Lobbyjs from './components/Lobbyjs/Lobbyjs';
 import Jobboard from './components/Jobboard/Jobboard';
 import Job from './components/Job/Job';
+import Profile from './components/Profile/Profile';
 
 
 
@@ -59,6 +60,7 @@ class App extends Component {
               <Route path="/register" exact render={ (props) => <Register {...props} onLogin={this.setLoginStatus} /> } />
               <Route path="/jobseeker" exact component={Lobbyjs} />
               <Route path="/employer" exact component={Lobbyemp} />
+              <Route path="/profile" exact component={Profile} />
               {
               // <Route path="/logout" exact component={Logout} />
               }
