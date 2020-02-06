@@ -12,10 +12,10 @@ class Navbar extends Component {
                     <p className={styles.brand}>&lt;Jnr/Hub&gt;</p>
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/jobboard">Job Board</Link></li>
                         { this.props.loggedin
                         ?
                         <div className={styles.inline}>
+                            <li><Link to="/jobboard">Job Board</Link></li>
                             <li><a className={styles.oddOneOut} to="/logout" onClick={() => this.props.onLogout()}>Logout</a></li>
                         </div>
                         :
