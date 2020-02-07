@@ -43,7 +43,7 @@ class Profile extends Component {
           <p>Suburb: { this.state.profile.suburb } </p>
           <p>State: { this.state.profile.state} </p>
           <p>Website: { this.state.profile.website} </p>
-          <p>User Type: { this.state.profile.user_type} </p>
+          <p>Account Type: { this.state.profile.user_type} </p>
           <br/>
             <br/>
 
