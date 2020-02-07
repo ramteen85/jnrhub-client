@@ -46,7 +46,7 @@ class Jobboard extends Component {
             <tr key={job.id}>
             <td className={styles.jobcolumn}>{job.company_name}</td>
             <td className={styles.jobcolumn}>{job.location}</td>
-            {/* <td className={styles.jobcolumn}>{job.role}</td> */}
+            { <td className={styles.jobcolumn}>{job.role}</td> }
             <td className={styles.jobcolumn}><a href="#/job">Details</a></td>
             </tr>
           ))}

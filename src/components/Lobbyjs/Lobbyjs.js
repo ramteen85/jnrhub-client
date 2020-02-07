@@ -1,26 +1,44 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import styles from '../Lobbyjs/Lobbyjs.module.css';
 
 class Lobbyjs extends Component {
 
-    state = {
-
+  state = {
+    profile: {
+      jobs: [] // prevent map() undefined error on initial render
     }
+  }
 
-    constructor(props) {
-        super(props);
-        if(!localStorage.getItem("jwt")) {
-            this.props.history.push("/");
-        }
-    }
+  componentDidMount() {
+    const token = `Bearer ${localStorage.getItem("jwt")}`;
+    axios.get('http://localhost:3000/users/profile', {
+      headers: {
+          "Authorization": token
+      }
+    })
+    .then(res => {
+      console.log(res.data );
+      this.setState({ profile: res.data });
+
+    })
+    .catch(err => {
+      console.log("error",err);
+    });
+
+
+  }//componentDidMount
 
     render() {
         return(
             <div>
-                <br/>
-                This is the job seekers home page
+
+          <h1>Welcome, {this.state.profile.full_name }</h1>
+          
             </div>
         );
     }
+
 
 }
 
