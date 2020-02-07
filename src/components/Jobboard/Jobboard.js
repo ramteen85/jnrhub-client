@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Jobboard.module.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Jobboard extends Component {
 
@@ -48,7 +49,7 @@ class Jobboard extends Component {
             <td className={styles.jobcolumn}>{job.location}</td>
 
             { <td className={styles.jobcolumn}>{job.role}</td> }
-            <td className={styles.jobcolumn}><a href="#/job">Details</a></td>
+            <td className={styles.jobcolumn}><Link to={`/job/${job.id}`}>Details</Link></td>
             </tr>
           ))}
           </tbody>
