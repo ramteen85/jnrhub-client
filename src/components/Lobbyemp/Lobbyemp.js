@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Lobbyemp.module.css';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class Lobbyemp extends Component {
 
@@ -50,7 +51,7 @@ class Lobbyemp extends Component {
             { <td className={styles.jobcolumn}>{job.role}</td> }
             { <td className={styles.jobcolumn}>{job.applicants}</td> }
             {/* <td className={styles.jobcolumn}>{job.role}</td> */}
-            <td className={styles.jobcolumn}><a href="#/job/IDHERE">Details</a></td>
+            <td className={styles.jobcolumn}><Link to={`/empjob/${job.id}`}>Details</Link></td>
             </tr>
           ))}
           </tbody>
