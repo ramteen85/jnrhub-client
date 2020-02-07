@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Navbar.module.css';
+import styles from 'jnrhub-client/Navbar.module.css';
 import {  Link } from 'react-router-dom';
 class Navbar extends Component {
     state = {
