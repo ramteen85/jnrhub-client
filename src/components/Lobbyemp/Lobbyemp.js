@@ -47,8 +47,8 @@ class Lobbyemp extends Component {
             <tr key={job.id}>
             <td className={styles.jobcolumn}>{job.company_name}</td>
             <td className={styles.jobcolumn}>{job.location}</td>
-            <td>Junior Web Developer</td>
-            <td>59</td>
+            { <td className={styles.jobcolumn}>{job.role}</td> }
+            { <td className={styles.jobcolumn}>{job.applicants}</td> }
             {/* <td className={styles.jobcolumn}>{job.role}</td> */}
             <td className={styles.jobcolumn}><a href="#/job/IDHERE">Details</a></td>
             </tr>
