@@ -9,6 +9,8 @@ import Jobboard from './components/Jobboard/Jobboard';
 import Job from './components/Job/Job';
 import Profile from './components/Profile/Profile';
 import Empjob from './components/Empjob/Empjob';
+import Applications from './components/Applications/Applications';
+
 
 
 
@@ -64,6 +66,7 @@ class App extends Component {
             <Route path="/" render={(props) => <Navbar {...props} loggedin={this.state.loggedin} onLogout={this.performLogout}  />} />
             <Route path="/jobboard" exact render={(props) => <Jobboard loggedIn={this.state.loggedin} {...props} />} />
             <Route path="/job" exact component={Job} />
+            <Route path="/applications" exact component={Applications} />
             <Route path="/empjob" exact component={Empjob} />
             <Switch>
               <Route path="/" exact render={ (props) => <Login {...props} loggedin={this.state.loggedin}  onLogin={this.setLoginStatus} /> } />
