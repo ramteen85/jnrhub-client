@@ -6,6 +6,10 @@ import styles from '../Jobboard/Jobboard.module.css';
 class Profile extends Component {
 
   state = {
+    // for keeping track of inline editing:
+    editing: {
+      name: false
+    },
     profile: {
       jobs: [] // prevent map() undefined error on initial render
     }
@@ -30,6 +34,19 @@ class Profile extends Component {
 
   }//componentDidMount
 
+    editName = () => {
+      console.log('editing!');
+      this.setState({ editing: { name: true} });
+    }
+
+    updateName = (event) => {
+      console.log(event.target.value);
+      if(event.key === "Enter"){
+        console.log('SUBMIT!', this.state.profile.id);
+
+      }
+    }
+
     render() {
         return(
             <div>
@@ -37,7 +54,23 @@ class Profile extends Component {
           <h1>Profile</h1>
 
           <div className={styles.profileStyle}>
-          <p>Full name: { this.state.profile.full_name } </p>
+          <p className={styles.profileItem}>Full name:
+            {
+              this.state.editing.name
+              ?
+              <input type="text"
+                defaultValue={this.state.profile.full_name}
+                onKeyDown={ this.updateName }
+              />
+              :
+              <span>
+                { this.state.profile.full_name }
+                <img onClick={ this.editName } src="/assets/img/edit-icon.png" className={styles.edit} />
+              </span>
+            }
+
+
+          </p>
           <p>Email: { this.state.profile.email } </p>
           <p>Phone number: { this.state.profile.phone_no } </p>
           <p>Suburb: { this.state.profile.suburb } </p>
@@ -69,7 +102,7 @@ class Profile extends Component {
               <tr key={job.id}>
               <td className={styles.jobcolumn}>{job.company_name}</td>
               <td className={styles.jobcolumn}>{job.location}</td>
-              // {/* <td className={styles.jobcolumn}>{job.role}</td> */}
+              {/* <td className={styles.jobcolumn}>{job.role}</td> */}
               <td className={styles.jobcolumn}><a href="#/job">Details</a></td>
               </tr>
             ))}

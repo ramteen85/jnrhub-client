@@ -50,7 +50,7 @@ class Lobbyemp extends Component {
             <td>Junior Web Developer</td>
             <td>59</td>
             {/* <td className={styles.jobcolumn}>{job.role}</td> */}
-            <td className={styles.jobcolumn}><a href="#/empjob">Details</a></td>
+            <td className={styles.jobcolumn}><a href="#/job/IDHERE">Details</a></td>
             </tr>
           ))}
           </tbody>
