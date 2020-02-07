@@ -33,21 +33,26 @@ class Applications extends Component {
           <div>
           <h1>Users Applied</h1>
           </div>
-          <table>
+          <div className={styles.applicants}>
+          <table className={styles.applicants}>
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Profile</th>
+                <th>Phone Number</th>
+                <th>Email</th>
               </tr>
             </thead>
             <tbody>
-            { this.state.users.map((user, key) => (
-              <tr key={user.id}>
-              <td>{user.full_name}</td>
-              </tr>
-            ))}
+          { this.state.users.map((user, key) => (
+            <tr key={user.id}>
+            <td className={styles.applicantcolumn}>{user.full_name}</td>
+            <td className={styles.applicantcolumn}>{user.phone_no}</td>
+            <td className={styles.applicantcolumn}>{user.email}</td>
+            </tr>
+          ))}
             </tbody>
-          </table>
+            </table>
+            </div>
         </div>
       )
     }

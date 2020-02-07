@@ -43,7 +43,7 @@ class Lobbyemp extends Component {
             </tr>
           </thead>
           <tbody>
-          { this.state.jobs.map((job, key) => (
+          { this.state.jobs.slice(0, 2).map((job, key) => (
             <tr key={job.id}>
             <td className={styles.jobcolumn}>{job.company_name}</td>
             <td className={styles.jobcolumn}>{job.location}</td>
