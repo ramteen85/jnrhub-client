@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from 'jnrhub-client/Applications.module.css';
+import styles from './Applications.module.css';
 import axios from 'axios';
 
 class Applications extends Component {
