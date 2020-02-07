@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import styles from '../Jobboard/Jobboard.module.css';
+import styles from '../Profile/Profile.module.css';
 // import styles from './Profile.module.css'
 
 class Profile extends Component {
@@ -71,44 +71,19 @@ class Profile extends Component {
 
 
           </p>
-          <p>Email: { this.state.profile.email } </p>
-          <p>Phone number: { this.state.profile.phone_no } </p>
-          <p>Suburb: { this.state.profile.suburb } </p>
-          <p>State: { this.state.profile.state} </p>
-          <p>Website: { this.state.profile.website} </p>
-          <p>Account Type: { this.state.profile.user_type} </p>
+          <p className={styles.profileItem}>Email: { this.state.profile.email } </p>
+          <p className={styles.profileItem}>Phone number: { this.state.profile.phone_no } </p>
+          <p className={styles.profileItem}>Suburb: { this.state.profile.suburb } </p>
+          <p className={styles.profileItem}>State: { this.state.profile.state} </p>
+          <p className={styles.profileItem}>Website: { this.state.profile.website} </p>
+          <p className={styles.profileItem}>Account Type: { this.state.profile.user_type} </p>
           <br/>
             <br/>
 
-        <h2>Latest Job Postings </h2>
         <br/>
 
 
           </div>
-
-
-          <table className={styles.jobboard}>
-            <thead>
-              <tr>
-                <th>Company</th>
-                <th>Location</th>
-                <th>Role</th>
-              </tr>
-            </thead>
-            <tbody>
-
-
-            { this.state.profile.jobs.map((job, key) => (
-              <tr key={job.id}>
-              <td className={styles.jobcolumn}>{job.company_name}</td>
-              <td className={styles.jobcolumn}>{job.location}</td>
-              <td className={styles.jobcolumn}>{job.role}</td>
-              <td className={styles.jobcolumn}><a href="#/job">Details</a></td>
-              </tr>
-            ))}
-            </tbody>
-          </table>
-
 
             </div>
         );

@@ -1,0 +1,41 @@
+body {
+  font-family: 'Inconsolata', monospace;
+
+}
+
+.edit {
+  max-width: 16px;
+  visibility: hidden;
+}
+
+.profileItem:hover  .edit{
+  visibility: visible;
+  cursor: pointer
+}
+
+.edit:hover {
+  visibility: visible;
+}
+.profileItem {
+  margin: 10px;
+}
+.profileItem input {
+  display: inline-block;
+}
+
+
+/* .profileStyle img :hover{
+  border: 1px solid red;
+} */
+
+
+.profileStyle {
+
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+    font-family: 'Inconsolata', monospace;
+    margin-top: 0;
+    color: black;
+    font-size: 1.2em;
+  }
