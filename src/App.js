@@ -66,6 +66,7 @@ class App extends Component {
             <Route path="/" render={(props) => <Navbar {...props} loggedin={this.state.loggedin} onLogout={this.performLogout}  />} />
             <Route path="/jobboard" exact render={(props) => <Jobboard loggedIn={this.state.loggedin} {...props} />} />
             <Route path="/job" exact component={Job} />
+            <Route path="/job/:id" exact render={(props) => <Job {...props} /> } />
             <Route path="/applications" exact component={Applications} />
             <Route path="/empjob" exact component={Empjob} />
             <Switch>
