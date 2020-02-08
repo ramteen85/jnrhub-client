@@ -91,7 +91,7 @@ class Login extends Component {
             <div className={styles.container}>
               <div className={styles.loginform}>
               <h2>Log In</h2><hr/><br/>
-                // Login form
+                {/* Login form */}
                 <form onSubmit={this.loginHandler}>
                     <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
                     <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
@@ -99,7 +99,7 @@ class Login extends Component {
                     type="submit">Login</button><br/>
                     <button className={styles.button}><a href="/#/register">Register</a></button>
                 </form>
-                // If details are invalid:
+                {/* // If details are invalid: */}
                 { this.state.invalidLogin
                 ?
                 <div className={styles.invalidLogin}>

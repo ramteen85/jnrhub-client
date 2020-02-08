@@ -105,7 +105,6 @@ class Profile extends Component {
 
     render() {
         return(
-          // User information
             <div>
 
           <h1>Profile</h1>

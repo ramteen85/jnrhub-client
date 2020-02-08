@@ -45,14 +45,14 @@ class Jobboard extends Component {
             </tr>
           </thead>
           <tbody>
-          // Loop displaying all jobs in the database
+          {/* // Loop displaying all jobs in the database */}
           { this.state.jobs.map((job, key) => (
             <tr key={job.id}>
             <td className={styles.jobcolumn}>{job.company_name}</td>
             <td className={styles.jobcolumn}>{job.location}</td>
 
             { <td className={styles.jobcolumn}>{job.role}</td> }
-            // Routes to job's ID parameter, to show the job that was clicked on
+            {/* // Routes to job's ID parameter, to show the job that was clicked on */}
             <td className={styles.jobcolumn}><Link to={`/job/${job.id}`}>Details</Link></td>
             </tr>
           ))}

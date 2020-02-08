@@ -44,7 +44,7 @@ class Applications extends Component {
               </tr>
             </thead>
             <tbody>
-            // Loop to display list of applicants (at the moment every user)
+            {/* // Loop to display list of applicants (at the moment every user) */}
           { this.state.users.map((user, key) => (
             <tr key={user.id}>
             <td className={styles.applicantcolumn}>{user.full_name}</td>
