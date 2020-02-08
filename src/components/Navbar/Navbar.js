@@ -17,7 +17,7 @@ class Navbar extends Component {
                         <div className={styles.inline}>
                             <li><Link to="/jobboard">Job Board</Link></li>
                             <li><Link to="/profile">Profile</Link></li>
-                            <li><a className={styles.oddOneOut} to="/logout" onClick={() => this.props.onLogout()}>Logout</a></li>
+                            <li><a href="#" className={styles.oddOneOut} to="/logout" onClick={() => this.props.onLogout()}>Logout</a></li>
                         </div>
                         :
                         <li><Link to="/register">Register</Link></li>
