@@ -28,14 +28,6 @@ class App extends Component {
     userType: ''
   }
 
-  // logout = () => {
-  //   this.setState({ loggedin: false });
-  // }
-
-  // login = () => {
-  //   this.setState({ loggedin: true });
-  // }
-
   componentDidMount() {
     if(localStorage.getItem("jwt")) {
       this.setState({ loggedin: true });
@@ -51,8 +43,8 @@ class App extends Component {
     this.setState({ loggedin: false });
     localStorage.removeItem('jwt');
     localStorage.removeItem('usrType');
-    // this.props.history.push('/');
-    window.location.replace("/"); // maybe we can find a better way to redirect?
+    // Redirection
+    window.location.replace("/");
   }
 
   setType = (type) => {
@@ -61,20 +53,28 @@ class App extends Component {
 
   render() {
     return (
+      // Routing
       <Router>
         <div className="App">
             <Route path="/" render={(props) => <Navbar {...props} loggedin={this.state.loggedin} onLogout={this.performLogout}  />} />
+            // Route to Job Board
             <Route path="/jobboard" exact render={(props) => <Jobboard loggedIn={this.state.loggedin} {...props} />} />
-            <Route path="/job" exact component={Job} />
+            // Route to an individual Job, for Job seekers
             <Route path="/job/:id" exact render={(props) => <Job {...props} /> } />
+            // Route to applicants, for employers
             <Route path="/applications" exact component={Applications} />
+            // Route to an individual job, for Employers
             <Route path="/empjob/:id" exact component={Empjob} />
-            
+
             <Switch>
               <Route path="/" exact render={ (props) => <Login {...props} loggedin={this.state.loggedin}  onLogin={this.setLoginStatus} /> } />
+              // Registration Page
               <Route path="/register" exact render={ (props) => <Register {...props} onLogin={this.setLoginStatus} /> } />
+              // Job Seeker landing page
               <Route path="/jobseeker" exact render={(props) => <Lobbyjs {...props} /> } />
+              // Employer landing page
               <Route path="/employer" exact render={ (props) => <Lobbyemp {...props} /> } />
+              // View Profile page
               <Route path="/profile" exact component={Profile} />
               {
               // <Route path="/logout" exact component={Logout} />

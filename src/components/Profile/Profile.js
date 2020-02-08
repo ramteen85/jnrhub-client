@@ -35,7 +35,7 @@ class Profile extends Component {
     });
 
 
-  }//componentDidMount
+  }
 
     editField = (event) => {
       console.log('editing!', event.target.name);
@@ -105,6 +105,7 @@ class Profile extends Component {
 
     render() {
         return(
+          // User information
             <div>
 
           <h1>Profile</h1>

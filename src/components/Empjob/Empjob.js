@@ -10,6 +10,7 @@ class Empjob extends Component {
   }
 
   componentDidMount() {
+    // Get job whos ID matches that in params
     axios.get(`http://localhost:3000/jobs/${this.props.match.params.id}`)
     .then(res => {
       this.setState({ job: res.data });
@@ -25,6 +26,7 @@ class Empjob extends Component {
 
     return(
       <div className={styles.container}>
+          // Loop to show information about a particular job
           <h1>{this.state.job.role}</h1><br/>
           <p><strong>Company:</strong><br/><br/>{ this.state.job.company_name }</p><br/><hr/><br/>
           <p><strong>Role:</strong> <br/><br/>{ this.state.job.role }</p><br/><hr/><br/>
@@ -33,7 +35,9 @@ class Empjob extends Component {
           <p><strong>Job Description:</strong><br/><br/><br/>
           {this.state.job.description}</p>
           <br/><hr/><hr/><br/>
+          // Current Applicant counter, starting at 0, supposed to be incrementing when users apply
           <p>Current Applicants: <span>{this.state.job.applicants}</span></p>
+          // Destroy job path when an Employer marks a position as filled
           <div className={styles.apply}>
             <a href="#/destroyJobPath">Mark Position as Filled</a>
           </div>

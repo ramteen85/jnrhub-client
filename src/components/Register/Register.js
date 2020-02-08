@@ -5,6 +5,7 @@ import axios from 'axios';
 
 class Register extends Component {
 
+  // Holds all fields variables
     state = {
         submitted: false,
         emailError: styles.errorMsg,
@@ -20,10 +21,8 @@ class Register extends Component {
     };
 
     memberHandler = (e, userPath) => {
-        console.log(e);
-        console.log(this.state);
 
-
+        // Gets users from back end to send data to
         axios.post('http://localhost:3000/users', {
             user: {
                 email: this.state.email,
@@ -41,12 +40,7 @@ class Register extends Component {
             }
         })
         .then(res => {
-            console.log(res);
-            // account created successfully!
-            // TODO: perform login for new account, using knock route
-            // todo: redirect to employers page
-            // this.props.history.push(`/employer`);
-
+            // Gets user token
             axios.post('http://localhost:3000/user_token', {
             auth: {
                 email: this.state.email,
@@ -54,7 +48,6 @@ class Register extends Component {
             }})
             .then(res => {
                 // save token
-                console.log(res);
                 localStorage.setItem("jwt", res.data.jwt);
                 // get user id later and save it into local storage
                 this.props.onLogin(true);
@@ -177,7 +170,6 @@ class Register extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        // console.log(e.target);
 
         let valid = true;
 
@@ -186,16 +178,13 @@ class Register extends Component {
         valid = result;
 
         if(valid) {
-            // TODO:
-
-            // move checktype component into this one
-            // hide form, display options for jobseeker or employer (only upon registration)
             this.setState({submitted: true});
         }
     }
 
     render() {
         return(
+          // Registration Form
             <div className={styles.container}>
                 { this.state.submitted === false
                 ?
@@ -287,12 +276,12 @@ class Register extends Component {
                       <div className={styles.container}>
                         <div className={styles.employer} onClick={(e) => this.memberHandler(e, "employer")}>
                           <label>An Employer</label>
-                          <img src="/assets/img/boss.jpeg" alt="The big boss"/>
+                          <img src="/assets/img/boss.jpeg" alt="Big Boss"/>
                         </div>
                         <div className={styles.jobseeker} onClick={(e) => this.memberHandler(e, "jobseeker")}>
                           <label>A Job Seeker</label>
 
-                          <img src="/assets/img/bludger.jpg" alt="dole bludging job seeker"/>
+                          <img src="/assets/img/bludger.jpg" alt="Bludging Job Seeker"/>
 
                         </div>
                       </div>

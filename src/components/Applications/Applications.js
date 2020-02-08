@@ -16,6 +16,7 @@ class Applications extends Component {
     }
 
     componentDidMount() {
+      // Get users from back end
       axios.get('http://localhost:3000/users')
       .then(res => {
         console.log(res.data);
@@ -43,6 +44,7 @@ class Applications extends Component {
               </tr>
             </thead>
             <tbody>
+            // Loop to display list of applicants (at the moment every user)
           { this.state.users.map((user, key) => (
             <tr key={user.id}>
             <td className={styles.applicantcolumn}>{user.full_name}</td>

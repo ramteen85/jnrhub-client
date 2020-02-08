@@ -6,6 +6,7 @@ import axios from 'axios';
 class Login extends Component {
 
     state = {
+        // Stores login state in variables
         username: '',
         password: '',
         invalidLogin: false
@@ -22,10 +23,9 @@ class Login extends Component {
     }
 
     loginHandler = (e) => {
-        // this.state.username
         e.preventDefault();
 
-        // axios.post('http://localhost:3000/login', { request })
+        // Gets user token
         axios.post('http://localhost:3000/user_token', {
             auth: {
                 email: this.state.username,
@@ -34,7 +34,7 @@ class Login extends Component {
         .then(res =>
         {
             // LOGIN SUCCESSFUl
-            //save token
+            // save token
             localStorage.setItem("jwt", res.data.jwt);
             let token = `Bearer ${localStorage.getItem("jwt")}`;
             this.props.onLogin(true);  // runs setLoginStatus() in parent component App.js (to update nav)
@@ -65,21 +65,16 @@ class Login extends Component {
                 }
             })
             .catch(err => {
-                // didnt get ID
+                // if didnt get ID
                 console.log('getuser error', err);
                 this.setState({invalidLogin: true});
             })
 
 
         }).catch(err => {
-            //TODO: display error message in login screen
             console.log('token auth error', err);
             this.setState({invalidLogin: true});
         });
-
-        //TODO:
-        // clear input fields when submitting
-        // grab login info and redirect to landing pages accordingly
     }
 
     inputChangeHandler = (event) => {
@@ -96,6 +91,7 @@ class Login extends Component {
             <div className={styles.container}>
               <div className={styles.loginform}>
               <h2>Log In</h2><hr/><br/>
+                // Login form
                 <form onSubmit={this.loginHandler}>
                     <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
                     <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
@@ -103,7 +99,7 @@ class Login extends Component {
                     type="submit">Login</button><br/>
                     <button className={styles.button}><a href="/#/register">Register</a></button>
                 </form>
-
+                // If details are invalid:
                 { this.state.invalidLogin
                 ?
                 <div className={styles.invalidLogin}>
@@ -120,5 +116,4 @@ class Login extends Component {
 
 }
 
-// export default withRouter(Login);
 export default Login;
