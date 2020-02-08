@@ -57,24 +57,24 @@ class App extends Component {
       <Router>
         <div className="App">
             <Route path="/" render={(props) => <Navbar {...props} loggedin={this.state.loggedin} onLogout={this.performLogout}  />} />
-            // Route to Job Board
+            {/* // Route to Job Board */}
             <Route path="/jobboard" exact render={(props) => <Jobboard loggedIn={this.state.loggedin} {...props} />} />
-            // Route to an individual Job, for Job seekers
+            {/* // Route to an individual Job, for Job seekers */}
             <Route path="/job/:id" exact render={(props) => <Job {...props} /> } />
-            // Route to applicants, for employers
+            {/* // Route to applicants, for employers */}
             <Route path="/applications" exact component={Applications} />
-            // Route to an individual job, for Employers
+            {/* // Route to an individual job, for Employers */}
             <Route path="/empjob/:id" exact component={Empjob} />
 
             <Switch>
               <Route path="/" exact render={ (props) => <Login {...props} loggedin={this.state.loggedin}  onLogin={this.setLoginStatus} /> } />
-              // Registration Page
+              {/* // Registration Page */}
               <Route path="/register" exact render={ (props) => <Register {...props} onLogin={this.setLoginStatus} /> } />
-              // Job Seeker landing page
+              {/* // Job Seeker landing page */}
               <Route path="/jobseeker" exact render={(props) => <Lobbyjs {...props} /> } />
-              // Employer landing page
+              {/* // Employer landing page */}
               <Route path="/employer" exact render={ (props) => <Lobbyemp {...props} /> } />
-              // View Profile page
+              {/* // View Profile page */}
               <Route path="/profile" exact component={Profile} />
               {
               // <Route path="/logout" exact component={Logout} />
