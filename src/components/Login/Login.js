@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import {withRouter} from 'react-router-dom';
 import styles from "./Login.module.css";
 import axios from 'axios';
+import jwtDecode from 'jwt-decode';
 
 class Login extends Component {
 
@@ -25,57 +26,30 @@ class Login extends Component {
     loginHandler = (e) => {
         e.preventDefault();
 
-        // Gets user token
-        axios.post('http://localhost:3000/user_token', {
-            auth: {
-                email: this.state.username,
-                password: this.state.password
-        }})
-        .then(res =>
-        {
-            // LOGIN SUCCESSFUl
-            // save token
+        axios.post('http://localhost:3000/tokens', {
+            email: this.state.username,
+            password: this.state.password
+        })
+        .then(res => {
+            console.log(res);
             localStorage.setItem("jwt", res.data.jwt);
-            let token = `Bearer ${localStorage.getItem("jwt")}`;
-            this.props.onLogin(true);  // runs setLoginStatus() in parent component App.js (to update nav)
+            let result = jwtDecode(localStorage.getItem("jwt"));
+            localStorage.setItem("usrType", result.userType);
+            this.props.onLogin(true);
 
-            let config = {
-                headers: {
-                    "Authorization": token
-                }
-            };
+            if(result.userType === "jobseeker") {
+                // redirect to jobseeker component
+                this.props.history.push(`/jobseeker`);
 
-            //get user ID
-
-            axios.post(`http://localhost:3000/users/getuser`, {
-                user: this.state.username,
-                password: this.state.password
-            }, config)
-            .then(res => {
-                //got ID
-                console.log(res);
-                if(res.data.user_type === "jobseeker") {
-                    // redirect to jobseeker component
-                    localStorage.setItem("usrType", "jobseeker");
-                    this.props.history.push(`/jobseeker`);
-
-                } else if(res.data.user_type === "employer") {
-                    // redirect_to employer component
-                    localStorage.setItem("usrType", "employer");
-                    this.props.history.push(`/employer`);
-                }
-            })
-            .catch(err => {
-                // if didnt get ID
-                console.log('getuser error', err);
-                this.setState({invalidLogin: true});
-            })
-
-
-        }).catch(err => {
-            console.log('token auth error', err);
+            } else if(result.userType === "employer") {
+                // redirect_to employer component
+                this.props.history.push(`/employer`);
+            }
+        })
+        .catch(err => {
+            //display error
             this.setState({invalidLogin: true});
-        });
+        }); 
     }
 
     inputChangeHandler = (event) => {
@@ -90,31 +64,26 @@ class Login extends Component {
     render() {
         return(
             <div className={styles.container}>
-              <div className={styles.loginform}>
-              <h2>Log In</h2><hr/><br/>
-<<<<<<< HEAD
-                {/* // Login form */}
-=======
-                {/* Login form */}
->>>>>>> 5233878361b7a4157344829f689ee7f6cbb6a53e
-                <form onSubmit={this.loginHandler}>
-                    <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
-                    <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
-                    <button className = {styles.loginregisterbutton}
-                    type="submit">Login</button><br/>
-                    <button className={styles.button}><a href="/#/register">Register</a></button>
-                </form>
-                {/* // If details are invalid: */}
-                { this.state.invalidLogin
-                ?
-                <div className={styles.invalidLogin}>
-                    Invalid Login
+                <div className={styles.loginform}>
+                    <h2>Log In</h2><hr/><br/>
+                        {/* // Login form */}
+                        <form onSubmit={this.loginHandler}>
+                            <input type="text" name="username" onChange={this.inputChangeHandler} placeholder="Username.."/>
+                            <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
+                            <button className = {styles.loginregisterbutton}
+                            type="submit">Login</button><br/>
+                            <button className={styles.button}><a href="/#/register">Register</a></button>
+                        </form>
+                        {/* // If details are invalid: */}
+                        { this.state.invalidLogin
+                        ?
+                        <div className={styles.invalidLogin}>
+                            Invalid Login
+                        </div>
+                        :
+                        ""
+                        }
                 </div>
-                :
-                ""
-                }
-
-            </div>
             </div>
         );
     }

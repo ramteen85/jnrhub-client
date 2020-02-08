@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import styles from  "./Register.module.css";
 import axios from 'axios';
+import jwtDecode from 'jwt-decode';
 
 class Register extends Component {
 
@@ -23,6 +24,7 @@ class Register extends Component {
     memberHandler = (e, userPath) => {
 
         // Gets users from back end to send data to
+        
         axios.post('http://localhost:3000/users', {
             user: {
                 email: this.state.email,
@@ -41,25 +43,19 @@ class Register extends Component {
         })
         .then(res => {
             // Gets user token
-            axios.post('http://localhost:3000/user_token', {
-            auth: {
-                email: this.state.email,
-                password: this.state.password
-            }})
-            .then(res => {
-                // save token
-                localStorage.setItem("jwt", res.data.jwt);
-                // get user id later and save it into local storage
-                this.props.onLogin(true);
+            console.log(res.data.jwt);
+            localStorage.setItem("jwt", res.data.jwt);
 
-                // redirect
-                localStorage.setItem("usrType", userPath);
-                this.props.history.push(`/${userPath}`);
-            })
-            .catch(err => {
-                // could not get token
-                console.log(err);
-            });
+            // update navbar
+            this.props.onLogin(true);
+
+            // grab user data
+            let result = jwtDecode(localStorage.getItem("jwt"));
+            console.log(result);
+
+            // redirect
+            localStorage.setItem("usrType", result.userType);
+            this.props.history.push(`/${localStorage.getItem("usrType")}`);
 
         })
         .catch(err => {
