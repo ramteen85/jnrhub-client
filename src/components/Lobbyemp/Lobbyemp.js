@@ -45,15 +45,15 @@ class Lobbyemp extends Component {
             </tr>
           </thead>
           <tbody>
-          // Loops through all jobs, should be showing which jobs a particular
-          // Employer has created, right now just taking the first 2
+          {/* // Loops through all jobs, should be showing which jobs a particular */}
+          {/* // Employer has created, right now just taking the first 2 */}
           { this.state.jobs.slice(0, 2).map((job, key) => (
             <tr key={job.id}>
             <td className={styles.jobcolumn}>{job.company_name}</td>
             <td className={styles.jobcolumn}>{job.location}</td>
             { <td className={styles.jobcolumn}>{job.role}</td> }
             { <td className={styles.jobcolumn}>{job.applicants}</td> }
-            // Shows employer job show page
+            {/* // Shows employer job show page */}
             <td className={styles.jobcolumn}><Link to={`/empjob/${job.id}`}>Details</Link></td>
             </tr>
           ))}

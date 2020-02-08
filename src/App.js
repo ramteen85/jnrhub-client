@@ -76,9 +76,6 @@ class App extends Component {
               <Route path="/employer" exact render={ (props) => <Lobbyemp {...props} /> } />
               {/* // View Profile page */}
               <Route path="/profile" exact component={Profile} />
-              {
-              // <Route path="/logout" exact component={Logout} />
-              }
             </Switch>
         </div>
       </Router>

@@ -27,7 +27,7 @@ class Job extends Component {
 
     return(
       <div className={styles.container}>
-        // Loop to show job information
+        {/* // Loop to show job information */}
           <h1>{this.state.job.role}</h1><br/>
           <p><strong>Company:</strong><br/><br/>{this.state.job.company_name}</p><br/><hr/><br/>
           <p><strong>Role:</strong> <br/><br/>Junior Front End Developer</p><br/><hr/><br/>
@@ -37,7 +37,7 @@ class Job extends Component {
           {this.state.job.description}</p>
           <br/><hr/><hr/><br/>
           <div className={styles.apply}>
-          // Apply button, not functional yet
+          {/* // Apply button, not functional yet */}
           <a href="#/job/LINKGOESHERE">Apply Now!</a>
           </div>
         </div>
