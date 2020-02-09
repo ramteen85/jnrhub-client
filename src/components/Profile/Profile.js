@@ -117,7 +117,7 @@ class Profile extends Component {
               :
               <span>
                 { this.state.profile.full_name }
-                <img onClick={ this.editField } name="full_name" src="/jnrhub-client/img/edit-icon.png" className={styles.edit} />
+                <img onClick={ this.editField } name="full_name" src="/img/edit-icon.png" className={styles.edit} />
               </span>
             }
           </p>
@@ -135,7 +135,7 @@ class Profile extends Component {
               <span>
                 { this.state.profile.phone_no }
                 <img onClick={ this.editField } name="phone_no"
-                  src="/jnrhub-client/img/edit-icon.png" className={styles.edit} />
+                  src="/img/edit-icon.png" className={styles.edit} />
               </span>
             }
           </p>
@@ -153,7 +153,7 @@ class Profile extends Component {
               <span>
                 { this.state.profile.email }
                 <img onClick={ this.editField } name="email"
-                  src="/jnrhub-client/img/edit-icon.png" className={styles.edit} />
+                  src="/img/edit-icon.png" className={styles.edit} />
               </span>
             }    
           </p>
