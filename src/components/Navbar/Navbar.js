@@ -24,7 +24,7 @@ class Navbar extends Component {
                             <li><a href="#" className={styles.oddOneOut} to="/logout" onClick={() => this.props.onLogout()}>Logout</a></li>
                         </div>
                         :
-                        <li><Link to="/register">Register</Link></li>
+                        <li> <Link to="/">Register</Link></li>
                         }
                     </ul>
                 </nav>

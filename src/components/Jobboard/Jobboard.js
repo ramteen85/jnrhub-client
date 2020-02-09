@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 class Jobboard extends Component {
 
   state = {
-    // Holds jobs in the front end
     jobs: []
   }
 
@@ -18,7 +17,6 @@ class Jobboard extends Component {
   }
 
   componentDidMount() {
-    // Pulls jobs table from the back end
     axios.get('http://localhost:3000/jobs')
     .then(res => {
       console.log(res.data);
@@ -34,28 +32,29 @@ class Jobboard extends Component {
     return(
       <div className={styles.container}>
         <div className={styles.mainheader}>
-        <h1>Available jobs</h1>
-        </div>
+        <h1>Available Jobs</h1>
+
+
+      </div>
         <table className={styles.jobboard}>
           <thead>
             <tr>
               <th>Company</th>
               <th>Location</th>
               <th>Role</th>
+
             </tr>
           </thead>
           <tbody>
-          {/* // Loop displaying all jobs in the database */}
           { this.state.jobs.map((job, key) => (
             <tr key={job.id}>
             <td className={styles.jobcolumn}>{job.company_name}</td>
             <td className={styles.jobcolumn}>{job.location}</td>
-
-            { <td className={styles.jobcolumn}>{job.role}</td> }
-            {/* // Routes to job's ID parameter, to show the job that was clicked on */}
+          { <td className={styles.jobcolumn}>{job.role}</td> }
             <td className={styles.jobcolumn}><Link to={`/job/${job.id}`}>Details</Link></td>
-            </tr>
+          </tr>
           ))}
+           <button className={styles.button}><a href="/#/job/create">Create Job</a></button>
           </tbody>
         </table>
       </div>

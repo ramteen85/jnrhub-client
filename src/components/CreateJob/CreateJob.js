@@ -56,6 +56,7 @@ class CreateJob extends Component {
             <input type="text" placeholder="Salary..." name="salary" onChange={this.inputChangeHandler} />
             <textarea type="text" placeholder="Description..."name="description"onChange={this.inputChangeHandler}></textarea>
             <button type="submit">Create Job</button>
+
         </form>
 
       </div>
