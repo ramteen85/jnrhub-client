@@ -13,7 +13,13 @@ class Profile extends Component {
       phone_no: false,
       phone_noError: [],
       email: false,
-      email_error: []
+      email_error: [],
+      suburb: false,
+      suburb_error: [],
+      state: false,
+      state_error: [],
+      website: false,
+      website_error: []
     },
     profile: {
       jobs: [] // prevent map() undefined error on initial render
@@ -99,77 +105,133 @@ class Profile extends Component {
 
     render() {
         return(
-            <div>
+          <div>
 
-          <h1>Profile</h1>
+            <h1>Profile</h1>
 
-          <div className={styles.profileStyle}>
-
-
-          <p className={styles.profileItem}>Full name:&nbsp;
-            {
-              this.state.editing.full_name
-              ?
-              <input type="text" name="full_name"
-                defaultValue={this.state.profile.full_name}
-                onKeyDown={ this.updateField }
-              />
-              :
-              <span>
-                { this.state.profile.full_name }
-                <img onClick={ this.editField } name="full_name" src="/img/edit-icon.png" className={styles.edit} />
-              </span>
-            }
-          </p>
+            <div className={styles.profileStyle}>
 
 
-          <p className={styles.profileItem}>Phone Number:&nbsp;
-            {
-              this.state.editing.phone_no
-              ?
-              <input type="text" name="phone_no"
-                defaultValue={this.state.profile.phone_no}
-                onKeyDown={ this.updateField }
+            <p className={styles.profileItem}>Full name:&nbsp;
+              {
+                this.state.editing.full_name
+                ?
+                <input type="text" name="full_name"
+                  defaultValue={this.state.profile.full_name}
+                  onKeyDown={ this.updateField }
                 />
-              :
-              <span>
-                { this.state.profile.phone_no }
-                <img onClick={ this.editField } name="phone_no"
-                  src="/img/edit-icon.png" className={styles.edit} />
-              </span>
-            }
-          </p>
+                :
+                <span>
+                  { this.state.profile.full_name }
+                  <img onClick={ this.editField } name="full_name" src="/img/edit-icon.png" className={styles.edit} />
+                </span>
+              }
+            </p>
 
-          
-          <p className={styles.profileItem}>
-            {
-              this.state.editing.email
-              ?
-              <input type="text" name="email" 
-                defaultValue={this.state.profile.email} 
-                onKeyDown={ this.updateField }
-              />
-              :
-              <span>
-                { this.state.profile.email }
-                <img onClick={ this.editField } name="email"
-                  src="/img/edit-icon.png" className={styles.edit} />
-              </span>
-            }    
-          </p>
-          <p className={styles.profileItem}>Suburb: { this.state.profile.suburb } </p>
-          <p className={styles.profileItem}>State: { this.state.profile.state} </p>
-          <p className={styles.profileItem}>Website: { this.state.profile.website} </p>
-          <p className={styles.profileItem}>Account Type: { this.state.profile.user_type} </p>
-          <br/>
+
+            <p className={styles.profileItem}>Phone Number:&nbsp;
+              {
+                this.state.editing.phone_no
+                ?
+                <input type="text" name="phone_no"
+                  defaultValue={this.state.profile.phone_no}
+                  onKeyDown={ this.updateField }
+                  />
+                :
+                <span>
+                  { this.state.profile.phone_no }
+                  <img onClick={ this.editField } name="phone_no"
+                    src="/img/edit-icon.png" className={styles.edit} />
+                </span>
+              }
+            </p>
+
+            
+            <p className={styles.profileItem}>
+              {
+                this.state.editing.email
+                ?
+                <input type="text" name="email" 
+                  defaultValue={this.state.profile.email} 
+                  onKeyDown={ this.updateField }
+                />
+                :
+                <span>
+                  { this.state.profile.email }
+                  <img onClick={ this.editField } name="email"
+                    src="/img/edit-icon.png" className={styles.edit} />
+                </span>
+              }    
+            </p>
+            <p className={styles.profileItem}>
+              {
+                this.state.editing.suburb
+                ?
+                <input type="text" name="suburb" 
+                  defaultValue={this.state.profile.suburb} 
+                  onKeyDown={ this.updateField }
+                />
+                :
+                <span>
+                  { this.state.profile.suburb }
+                  <img onClick={ this.editField } name="suburb"
+                    src="/img/edit-icon.png" className={styles.edit} />
+                </span>
+              }    
+            </p>
+            <p className={styles.profileItem}>
+              {
+                this.state.editing.state
+                ?
+                <input type="text" name="state" 
+                  defaultValue={this.state.profile.state} 
+                  onKeyDown={ this.updateField }
+                />
+                :
+                <span>
+                  { this.state.profile.state }
+                  <img onClick={ this.editField } name="state"
+                    src="/img/edit-icon.png" className={styles.edit} />
+                </span>
+              }    
+            </p>
+            <p className={styles.profileItem}>
+              {
+                this.state.editing.website
+                ?
+                <input type="text" name="website" 
+                  defaultValue={this.state.profile.website} 
+                  onKeyDown={ this.updateField }
+                />
+                :
+                <span>
+                  { this.state.profile.website }
+                  <img onClick={ this.editField } name="website"
+                    src="/img/edit-icon.png" className={styles.edit} />
+                </span>
+              }    
+            </p>
+            <p className={styles.profileItem}>
+              {
+                this.state.editing.user_type
+                ?
+                <input type="text" name="user_type" 
+                  defaultValue={this.state.profile.user_type} 
+                  onKeyDown={ this.updateField }
+                />
+                :
+                <span>
+                  { this.state.profile.user_type }
+                  <img onClick={ this.editField } name="user_type"
+                    src="/img/edit-icon.png" className={styles.edit} />
+                </span>
+              }    
+            </p>
             <br/>
-
-        <br/>
-
-
+            <br/>
+            <br/>
           </div>
-
-            </div>
+      </div>
         );
     }
 
