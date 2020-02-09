@@ -47,7 +47,7 @@ class App extends Component {
     localStorage.removeItem('jwt');
     localStorage.removeItem('usrType');
     // Redirection
-    window.location.replace("/");
+    window.location.replace("/jnrhub-client");
   }
 
   setType = (type) => {
