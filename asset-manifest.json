@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/jnrhub-client/static/css/main.21cc0c38.chunk.css",
-    "main.js": "/jnrhub-client/static/js/main.ef53dd75.chunk.js",
-    "main.js.map": "/jnrhub-client/static/js/main.ef53dd75.chunk.js.map",
+    "main.js": "/jnrhub-client/static/js/main.c6c8b45e.chunk.js",
+    "main.js.map": "/jnrhub-client/static/js/main.c6c8b45e.chunk.js.map",
     "runtime-main.js": "/jnrhub-client/static/js/runtime-main.1e61fd59.js",
     "runtime-main.js.map": "/jnrhub-client/static/js/runtime-main.1e61fd59.js.map",
-    "static/js/2.97fc79e0.chunk.js": "/jnrhub-client/static/js/2.97fc79e0.chunk.js",
-    "static/js/2.97fc79e0.chunk.js.map": "/jnrhub-client/static/js/2.97fc79e0.chunk.js.map",
+    "static/js/2.cc80aa7c.chunk.js": "/jnrhub-client/static/js/2.cc80aa7c.chunk.js",
+    "static/js/2.cc80aa7c.chunk.js.map": "/jnrhub-client/static/js/2.cc80aa7c.chunk.js.map",
     "index.html": "/jnrhub-client/index.html",
-    "precache-manifest.a6ed8f63066ccd4976346fe97148eb70.js": "/jnrhub-client/precache-manifest.a6ed8f63066ccd4976346fe97148eb70.js",
+    "precache-manifest.a9015ee8be0d6e8a660d83758523fbe4.js": "/jnrhub-client/precache-manifest.a9015ee8be0d6e8a660d83758523fbe4.js",
     "service-worker.js": "/jnrhub-client/service-worker.js",
     "static/css/main.21cc0c38.chunk.css.map": "/jnrhub-client/static/css/main.21cc0c38.chunk.css.map",
-    "static/js/2.97fc79e0.chunk.js.LICENSE.txt": "/jnrhub-client/static/js/2.97fc79e0.chunk.js.LICENSE.txt"
+    "static/js/2.cc80aa7c.chunk.js.LICENSE.txt": "/jnrhub-client/static/js/2.cc80aa7c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1e61fd59.js",
-    "static/js/2.97fc79e0.chunk.js",
+    "static/js/2.cc80aa7c.chunk.js",
     "static/css/main.21cc0c38.chunk.css",
-    "static/js/main.ef53dd75.chunk.js"
+    "static/js/main.c6c8b45e.chunk.js"
   ]
 }
