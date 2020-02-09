@@ -123,7 +123,7 @@ class Profile extends Component {
                 :
                 <span>
                   { this.state.profile.full_name }
-                  <img onClick={ this.editField } name="full_name" src="/jnr-hub/img/edit-icon.png" className={styles.edit} />
+                  <img onClick={ this.editField } name="full_name" src="/jnr-hub/assets/img/edit-icon.png" className={styles.edit} />
                 </span>
               }
             </p>
@@ -141,7 +141,7 @@ class Profile extends Component {
                 <span>
                   { this.state.profile.phone_no }
                   <img onClick={ this.editField } name="phone_no"
-                    src="/jnr-hub/img/edit-icon.png" className={styles.edit} />
+                    src="/jnr-hub/assets/img/edit-icon.png" className={styles.edit} />
                 </span>
               }
             </p>
@@ -159,7 +159,7 @@ class Profile extends Component {
                 <span>
                   { this.state.profile.email }
                   <img onClick={ this.editField } name="email"
-                    src="/jnr-hub/img/edit-icon.png" className={styles.edit} />
+                    src="/jnr-hub/assets/img/edit-icon.png" className={styles.edit} />
                 </span>
               }    
             </p>
@@ -175,7 +175,7 @@ class Profile extends Component {
                 <span>
                   { this.state.profile.suburb }
                   <img onClick={ this.editField } name="suburb"
-                    src="/jnr-hub/img/edit-icon.png" className={styles.edit} />
+                    src="/jnr-hub/assets/img/edit-icon.png" className={styles.edit} />
                 </span>
               }    
             </p>
@@ -191,7 +191,7 @@ class Profile extends Component {
                 <span>
                   { this.state.profile.state }
                   <img onClick={ this.editField } name="state"
-                    src="/jnr-hub/img/edit-icon.png" className={styles.edit} />
+                    src="/jnr-hub/assets/img/edit-icon.png" className={styles.edit} />
                 </span>
               }    
             </p>
@@ -207,7 +207,7 @@ class Profile extends Component {
                 <span>
                   { this.state.profile.website }
                   <img onClick={ this.editField } name="website"
-                    src="/jnr-hub/img/edit-icon.png" className={styles.edit} />
+                    src="/jnr-hub/assets/img/edit-icon.png" className={styles.edit} />
                 </span>
               }    
             </p>
@@ -223,7 +223,7 @@ class Profile extends Component {
                 <span>
                   { this.state.profile.user_type }
                   <img onClick={ this.editField } name="user_type"
-                    src="/jnr-hub/img/edit-icon.png" className={styles.edit} />
+                    src="/jnr-hub/assets/img/edit-icon.png" className={styles.edit} />
                 </span>
               }    
             </p>
