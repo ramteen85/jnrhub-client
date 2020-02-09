@@ -12,6 +12,8 @@ class Profile extends Component {
       full_nameError: [],
       phone_no: false,
       phone_noError: [],
+      email: false,
+      email_error: []
     },
     profile: {
       jobs: [] // prevent map() undefined error on initial render
@@ -138,16 +140,23 @@ class Profile extends Component {
             }
           </p>
 
-
-
-
-
-
-
-
-
-
-          <p className={styles.profileItem}>Email: { this.state.profile.email } </p>
+          
+          <p className={styles.profileItem}>
+            {
+              this.state.editing.email
+              ?
+              <input type="text" name="email" 
+                defaultValue={this.state.profile.email} 
+                onKeyDown={ this.updateField }
+              />
+              :
+              <span>
+                { this.state.profile.email }
+                <img onClick={ this.editField } name="email"
+                  src="/jnrhub-client/img/edit-icon.png" className={styles.edit} />
+              </span>
+            }    
+          </p>
           <p className={styles.profileItem}>Suburb: { this.state.profile.suburb } </p>
           <p className={styles.profileItem}>State: { this.state.profile.state} </p>
           <p className={styles.profileItem}>Website: { this.state.profile.website} </p>
