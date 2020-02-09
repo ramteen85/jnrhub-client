@@ -133,7 +133,7 @@ class Profile extends Component {
               <span>
                 { this.state.profile.phone_no }
                 <img onClick={ this.editField } name="phone_no"
-                  src="/assets/img/edit-icon.png" className={styles.edit} />
+                  src="jnrhub-client/assets/img/edit-icon.png" className={styles.edit} />
               </span>
             }
           </p>
