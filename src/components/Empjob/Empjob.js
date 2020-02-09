@@ -21,6 +21,13 @@ class Empjob extends Component {
     });
   }
 
+  deletePostHandler = () => {
+    axios.delete(`http://localhost:3000/jobs/${this.props.match.params.id}`)
+    .then(response => {
+      console.log(response);
+    });
+  }
+
 
   render() {
 
@@ -39,7 +46,7 @@ class Empjob extends Component {
           <p>Current Applicants: <span>{this.state.job.applicants}</span></p>
           {/* // Destroy job path when an Employer marks a position as filled */}
           <div className={styles.apply}>
-            <a href="#/destroyJobPath">Mark Position as Filled</a>
+            <button onClick={this.deletePostHandler} className="Delete">Mark Position as Filled</button>
           </div>
         </div>
 
