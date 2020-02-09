@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/jnrhub-client/static/css/main.21cc0c38.chunk.css",
-    "main.js": "/jnrhub-client/static/js/main.e5bba2dd.chunk.js",
-    "main.js.map": "/jnrhub-client/static/js/main.e5bba2dd.chunk.js.map",
+    "main.js": "/jnrhub-client/static/js/main.d812b419.chunk.js",
+    "main.js.map": "/jnrhub-client/static/js/main.d812b419.chunk.js.map",
     "runtime-main.js": "/jnrhub-client/static/js/runtime-main.1e61fd59.js",
     "runtime-main.js.map": "/jnrhub-client/static/js/runtime-main.1e61fd59.js.map",
     "static/js/2.cc80aa7c.chunk.js": "/jnrhub-client/static/js/2.cc80aa7c.chunk.js",
     "static/js/2.cc80aa7c.chunk.js.map": "/jnrhub-client/static/js/2.cc80aa7c.chunk.js.map",
     "index.html": "/jnrhub-client/index.html",
-    "precache-manifest.f2285e129c1982fc1f161b7f072fa87f.js": "/jnrhub-client/precache-manifest.f2285e129c1982fc1f161b7f072fa87f.js",
+    "precache-manifest.54f9f1998a2a14ed8f7af2eb9472dd22.js": "/jnrhub-client/precache-manifest.54f9f1998a2a14ed8f7af2eb9472dd22.js",
     "service-worker.js": "/jnrhub-client/service-worker.js",
     "static/css/main.21cc0c38.chunk.css.map": "/jnrhub-client/static/css/main.21cc0c38.chunk.css.map",
     "static/js/2.cc80aa7c.chunk.js.LICENSE.txt": "/jnrhub-client/static/js/2.cc80aa7c.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.1e61fd59.js",
     "static/js/2.cc80aa7c.chunk.js",
     "static/css/main.21cc0c38.chunk.css",
-    "static/js/main.e5bba2dd.chunk.js"
+    "static/js/main.d812b419.chunk.js"
   ]
 }
