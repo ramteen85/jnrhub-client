@@ -12,8 +12,6 @@ class Profile extends Component {
       full_nameError: [],
       phone_no: false,
       phone_noError: [],
-      email: false,
-      email_error: [],
       suburb: false,
       suburb_error: [],
       state: false,
@@ -145,24 +143,7 @@ class Profile extends Component {
                 </span>
               }
             </p>
-
-            
-            <p className={styles.profileItem}>
-              {
-                this.state.editing.email
-                ?
-                <input type="text" name="email" 
-                  defaultValue={this.state.profile.email} 
-                  onKeyDown={ this.updateField }
-                />
-                :
-                <span>
-                  { this.state.profile.email }
-                  <img onClick={ this.editField } name="email"
-                    src="/jnrhub-client/assets/img/edit-icon.png" className={styles.edit} />
-                </span>
-              }    
-            </p>
+            <p className={styles.profileItem}>Email: { this.state.profile.email} </p>
             <p className={styles.profileItem}>
               {
                 this.state.editing.suburb
@@ -211,22 +192,7 @@ class Profile extends Component {
                 </span>
               }    
             </p>
-            <p className={styles.profileItem}>
-              {
-                this.state.editing.user_type
-                ?
-                <input type="text" name="user_type" 
-                  defaultValue={this.state.profile.user_type} 
-                  onKeyDown={ this.updateField }
-                />
-                :
-                <span>
-                  { this.state.profile.user_type }
-                  <img onClick={ this.editField } name="user_type"
-                    src="/jnrhub-client/assets/img/edit-icon.png" className={styles.edit} />
-                </span>
-              }    
-            </p>
+            <p className={styles.profileItem}>Account Type: { this.state.profile.user_type} </p>
             <br/>
             <br/>
             <br/>
