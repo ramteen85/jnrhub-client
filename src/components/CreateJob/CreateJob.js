@@ -29,6 +29,7 @@ class CreateJob extends Component {
       })
       .then(response => {
           console.log(response);
+          this.props.history.push('/jobboard');
       })
       .catch(err => {
           console.log(err);

@@ -4,7 +4,7 @@
 .container {
   display: block;
   justify-content: center;
-
+  margin-bottom: 100px;
 }
 
 .mainheader {
@@ -79,12 +79,23 @@
   background-color: #ddd;
 }
 
-.CreateJob  {
+.btnwrap {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
 
+.button {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 140%;
+  margin-right: auto;
+}
 
+.button a {
+  text-decoration: none;
+  color: white;
+}
 
-
-
-
-
-};

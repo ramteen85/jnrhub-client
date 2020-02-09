@@ -54,7 +54,9 @@ class Jobboard extends Component {
             <td className={styles.jobcolumn}><Link to={`/job/${job.id}`}>Details</Link></td>
           </tr>
           ))}
+           <tr className={styles.btnwrap}>
            <button className={styles.button}><a href="/#/job/create">Create Job</a></button>
+           </tr>
           </tbody>
         </table>
       </div>
