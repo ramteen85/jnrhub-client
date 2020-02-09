@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/jnrhub-client/static/css/main.d61c2647.chunk.css",
+    "main.js": "/jnrhub-client/static/js/main.f5d83cbe.chunk.js",
+    "main.js.map": "/jnrhub-client/static/js/main.f5d83cbe.chunk.js.map",
+    "runtime-main.js": "/jnrhub-client/static/js/runtime-main.1e61fd59.js",
+    "runtime-main.js.map": "/jnrhub-client/static/js/runtime-main.1e61fd59.js.map",
+    "static/js/2.aff1a717.chunk.js": "/jnrhub-client/static/js/2.aff1a717.chunk.js",
+    "static/js/2.aff1a717.chunk.js.map": "/jnrhub-client/static/js/2.aff1a717.chunk.js.map",
+    "index.html": "/jnrhub-client/index.html",
+    "precache-manifest.30861f9970c867b1a2ecd9ff64bfac4a.js": "/jnrhub-client/precache-manifest.30861f9970c867b1a2ecd9ff64bfac4a.js",
+    "service-worker.js": "/jnrhub-client/service-worker.js",
+    "static/css/main.d61c2647.chunk.css.map": "/jnrhub-client/static/css/main.d61c2647.chunk.css.map",
+    "static/js/2.aff1a717.chunk.js.LICENSE.txt": "/jnrhub-client/static/js/2.aff1a717.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1e61fd59.js",
+    "static/js/2.aff1a717.chunk.js",
+    "static/css/main.d61c2647.chunk.css",
+    "static/js/main.f5d83cbe.chunk.js"
+  ]
+}
