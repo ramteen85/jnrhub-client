@@ -18,11 +18,8 @@ class Navbar extends Component {
                         <div className={styles.inline}>
                             <li><Link to="/jobboard">Job Board</Link></li>
                             <li><Link to="/profile">Profile</Link></li>
-<<<<<<< HEAD
                           {/* // Else */}
-=======
-                        {/* // Else */}
->>>>>>> 5233878361b7a4157344829f689ee7f6cbb6a53e
+
                             <li><a href="#" className={styles.oddOneOut} to="/logout" onClick={() => this.props.onLogout()}>Logout</a></li>
                         </div>
                         :
