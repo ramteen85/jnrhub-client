@@ -10,6 +10,9 @@ import Job from './components/Job/Job';
 import Profile from './components/Profile/Profile';
 import Empjob from './components/Empjob/Empjob';
 import Applications from './components/Applications/Applications';
+import CreateJob from './components/CreateJob/CreateJob';
+
+
 
 
 
@@ -57,17 +60,20 @@ class App extends Component {
       <Router>
         <div className="App">
             <Route path="/" render={(props) => <Navbar {...props} loggedin={this.state.loggedin} onLogout={this.performLogout}  />} />
-            {/* // Route to Job Board */}
-            <Route path="/jobboard" exact render={(props) => <Jobboard loggedIn={this.state.loggedin} {...props} />} />
-            {/* // Route to an individual Job, for Job seekers */}
-            <Route path="/job/:id" exact render={(props) => <Job {...props} /> } />
-            {/* // Route to applicants, for employers */}
-            <Route path="/applications" exact component={Applications} />
-            {/* // Route to an individual job, for Employers */}
-            <Route path="/empjob/:id" exact component={Empjob} />
+
 
             <Switch>
               <Route path="/" exact render={ (props) => <Login {...props} loggedin={this.state.loggedin}  onLogin={this.setLoginStatus} /> } />
+                {/* // Route to Job Board */}
+              <Route path="/jobboard" exact render={(props) => <Jobboard loggedIn={this.state.loggedin} {...props} />} />
+                {/* // View Create Job Page */}
+              <Route path="/job/create" exact render={ (props) => <CreateJob {...props} /> } />
+              {/* // Route to an individual Job, for Job seekers */}
+              <Route path="/job/:id" exact render={(props) => <Job {...props} /> } />
+              {/* // Route to applicants, for employers */}
+              <Route path="/applications" exact component={Applications} />
+              {/* // Route to an individual job, for Employers */}
+              <Route path="/empjob/:id" exact component={Empjob} />
               {/* // Registration Page */}
               <Route path="/register" exact render={ (props) => <Register {...props} onLogin={this.setLoginStatus} /> } />
               {/* // Job Seeker landing page */}

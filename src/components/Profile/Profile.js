@@ -19,11 +19,10 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    const token = `Bearer ${localStorage.getItem("jwt")}`;
-    axios.get('http://localhost:3000/users/profile', {
-      headers: {
-          "Authorization": token
-      }
+    console.log("token");
+    console.log(localStorage.getItem("jwt"));
+    axios.post('http://localhost:3000/users/profile', {
+        "token": localStorage.getItem("jwt")
     })
     .then(res => {
       console.log(res.data );
@@ -37,10 +36,10 @@ class Profile extends Component {
 
   }
 
-    editField = (event) => {
-      console.log('editing!', event.target.name);
-      this.setState({ editing: { [event.target.name]: true} });
-    }
+  editField = (event) => {
+    console.log('editing!', event.target.name);
+    this.setState({ editing: { [event.target.name]: true} });
+  }
 
 
     updateField = (event) => {
@@ -54,20 +53,13 @@ class Profile extends Component {
       if(event.key === "Enter"){
 
         //send axios request with user
-        const token = `Bearer ${localStorage.getItem("jwt")}`;
+        const token = localStorage.getItem("jwt");
 
-        axios.patch("http://localhost:3000/users",
-          // data from form (ends up in Rails params)
-          {
+        axios.post("http://localhost:3000/users",{
             user: {
               [fieldName]: event.target.value
-            }
-          },
-          // axios config, i.e. headers:
-          {
-            headers: {
-                "Authorization": token
-            }
+            },
+            token: token
         })
         .then(response => {
 
