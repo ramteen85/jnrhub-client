@@ -55,7 +55,7 @@ class Jobboard extends Component {
           </tr>
           ))}
            <tr className={styles.btnwrap}>
-           <button className={styles.button}><a href="/#/job/create">Create Job</a></button>
+           <button className={styles.button}><Link to="/job/create">Create Job</Link></button>
            </tr>
           </tbody>
         </table>
