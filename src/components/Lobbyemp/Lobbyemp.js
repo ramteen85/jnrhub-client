@@ -18,10 +18,12 @@ class Lobbyemp extends Component {
 
   componentDidMount() {
     // Gets jobs table
-    axios.get('http://localhost:3000/jobs')
+    axios.post('http://localhost:3000/myjobs', {
+      token: localStorage.getItem("jwt")
+    })
     .then(res => {
       console.log(res.data);
-      this.setState({ jobs: res.data });
+      this.setState({ token: localStorage.getItem("jwt"), jobs: res.data });
     })
     .catch(err => {
       console.log(err);
@@ -47,7 +49,7 @@ class Lobbyemp extends Component {
           <tbody>
           {/* // Loops through all jobs, should be showing which jobs a particular */}
           {/* // Employer has created, right now just taking the first 2 */}
-          { this.state.jobs.slice(0, 2).map((job, key) => (
+          { this.state.jobs.slice(0).map((job, key) => (
             <tr key={job.id}>
             <td className={styles.jobcolumn}>{job.company_name}</td>
             <td className={styles.jobcolumn}>{job.location}</td>

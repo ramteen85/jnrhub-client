@@ -51,12 +51,23 @@ class Jobboard extends Component {
             <td className={styles.jobcolumn}>{job.company_name}</td>
             <td className={styles.jobcolumn}>{job.location}</td>
           { <td className={styles.jobcolumn}>{job.role}</td> }
+            { localStorage.getItem("usrType") === "jobseeker"
+            ?
             <td className={styles.jobcolumn}><Link to={`/job/${job.id}`}>Details</Link></td>
+            :
+            <td className={styles.jobcolumn}><Link to={`/empjob/${job.id}`}>Details</Link></td>
+            }
+
           </tr>
           ))}
+          { localStorage.getItem("usrType") !== 'jobseeker'
+          ? 
            <tr className={styles.btnwrap}>
-           <button className={styles.button}><Link to="/job/create">Create Job</Link></button>
+             <button className={styles.button}><Link to="/job/create">Create Job</Link></button>
            </tr>
+          :
+          ""
+          }
           </tbody>
         </table>
       </div>

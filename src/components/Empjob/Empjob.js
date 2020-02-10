@@ -1,20 +1,32 @@
 import React, { Component } from 'react';
 import styles from './Empjob.module.css';
 import axios from 'axios'
+import JwtDecode from 'jwt-decode';
+
 
 class Empjob extends Component {
 
   state = {
     role: '',
-    job: -1
+    job: -1,
+    result: ''
   }
 
   componentDidMount() {
+
+    this.setState({
+      result: JwtDecode(localStorage.getItem("jwt")) 
+    });
+
+
     // Get job whos ID matches that in params
     axios.get(`http://localhost:3000/jobs/${this.props.match.params.id}`)
     .then(res => {
-      this.setState({ job: res.data });
-      console.log(res.data);
+      this.setState({
+        ...this.state,
+        job: res.data 
+      });
+      console.log(this.state);
     })
     .catch(err => {
       console.log(err);
@@ -24,7 +36,7 @@ class Empjob extends Component {
   deletePostHandler = () => {
     axios.delete(`http://localhost:3000/jobs/${this.props.match.params.id}`)
     .then(response => {
-      console.log(response);
+      this.props.history.push('/');
     });
   }
 
@@ -34,20 +46,26 @@ class Empjob extends Component {
     return(
       <div className={styles.container}>
           {/* // Loop to show information about a particular job */}
-          <h1>{this.state.job.role}</h1><br/>
-          <p><strong>Company:</strong><br/><br/>{ this.state.job.company_name }</p><br/><hr/><br/>
-          <p><strong>Role:</strong> <br/><br/>{ this.state.job.role }</p><br/><hr/><br/>
-          <p><strong>Location:</strong><br/><br/> { this.state.job.location }</p><br/><hr/><br/>
-          <p><strong>Salary:</strong><br/><br/> ${this.state.job.salary}</p><br/><hr/><br/>
-          <p><strong>Job Description:</strong><br/><br/><br/>
+          <h1>{this.state.job.role}</h1>
+          <p><strong>Company:</strong>{ this.state.job.company_name }</p><hr/>
+          <p><strong>Role:</strong> { this.state. job.role }</p><hr/>
+          <p><strong>Location:</strong> { this.state.job.location }</p><hr/>
+          <p><strong>Salary:</strong> ${this.state.job.salary}</p><hr/>
+          <p><strong>Job Description:</strong>
           {this.state.job.description}</p>
-          <br/><hr/><hr/><br/>
+          <hr/><hr/>
           {/* // Current Applicant counter, starting at 0, supposed to be incrementing when users apply */}
           <p>Current Applicants: <span>{this.state.job.applicants}</span></p>
-          {/* // Destroy job path when an Employer marks a position as filled */}
+          {/* // Destroy job path when an Employer marks a position as filled - only if the employer created the job */}
+          { this.state.job.user_id === this.state.result.id
+          ?
           <div className={styles.apply}>
             <button onClick={this.deletePostHandler} className="Delete">Mark Position as Filled</button>
           </div>
+          :
+          ""
+          }
+
         </div>
 
     )

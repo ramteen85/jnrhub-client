@@ -8,8 +8,8 @@
   width: 50%;
   border: 1px solid black;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 100px;
   padding: 20px;
   padding-bottom: 40px;
   font-size: 1.2em;
@@ -17,6 +17,10 @@
   justify-content: center;
 }
 
+.container p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 
 .apply a {

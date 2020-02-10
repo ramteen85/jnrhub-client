@@ -31,7 +31,7 @@ class Lobbyjs extends Component {
         return(
             <div>
                 {/* // Displays user name for welcome message */}
-                <h1>Welcome, {this.state.profile.full_name }</h1>
+                <h1>Welcome, {this.state.profile.full_name}</h1>
             </div>
         );
     }
