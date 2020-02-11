@@ -71,7 +71,7 @@ class App extends Component {
               {/* // Route to an individual Job, for Job seekers */}
               <Route path="/job/:id" exact render={(props) => <Job {...props} /> } />
               {/* // Route to applicants, for employers */}
-              <Route path="/applications" exact component={Applications} />
+              <Route path="/applications/:id" exact component={Applications} />
               {/* // Route to an individual job, for Employers */}
               <Route path="/empjob/:id" exact component={Empjob} />
               {/* // Registration Page */}
