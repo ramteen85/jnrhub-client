@@ -31,6 +31,7 @@ class Job extends Component {
     })
     .then(res => {
       console.log(res.data);
+      alert(`Application sent to ${this.state.job.company_name}`);
       this.props.history.push('/');
     })
     .catch(err => {
