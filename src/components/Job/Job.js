@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Job.module.css';
 import axios from 'axios';
+import jwtDecode from 'jwt-decode';
 
 class Job extends Component {
 

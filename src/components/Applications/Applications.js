@@ -38,7 +38,7 @@ class Applications extends Component {
           <h1 className={styles.heading}>Users Applied</h1>
           </div>
           <div className={styles.applicants}>
-            { this.state.users
+            { this.state.users.length !== 0
             ?
             <table className={styles.applicants}>
             <thead>
@@ -49,10 +49,10 @@ class Applications extends Component {
               </tr>
             </thead>
             <tbody>
-            <tr> &nbsp; </tr>
+            <tr> <td><span className={styles.displaynone}>invisible</span></td> </tr>
             {/* Loop to display list of applicants (at the moment every user) */}
             { this.state.users.map((user, key) => (
-            <tr key={user.id}>
+            <tr key={key}>
             <td className={styles.applicantcolumn}>{user.name}</td>
             <td className={styles.applicantcolumn}>{user.phone_no}</td>
             <td className={styles.applicantcolumn}>{user.email}</td>
