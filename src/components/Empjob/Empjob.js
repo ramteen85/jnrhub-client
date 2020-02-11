@@ -63,7 +63,10 @@ class Empjob extends Component {
           ?
           <div className={styles.apply}>
               {/* NEEDS TO BE LINKED TO THE APPLICANTS OF THE PARAM JOB ID */}
+            <br/>
             <button><Link to={`/applications/${this.state.job.id}`}>View Applicants</Link></button>
+            <br/>
+            <br/>
             <button onClick={this.deletePostHandler} className="Delete">Mark Position as Filled</button>
           </div>
           :
