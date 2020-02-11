@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './Empjob.module.css';
 import axios from 'axios'
 import JwtDecode from 'jwt-decode';
+import { Link } from 'react-router-dom';
 
 
 class Empjob extends Component {
@@ -15,7 +16,7 @@ class Empjob extends Component {
   componentDidMount() {
 
     this.setState({
-      result: JwtDecode(localStorage.getItem("jwt")) 
+      result: JwtDecode(localStorage.getItem("jwt"))
     });
 
 
@@ -24,7 +25,7 @@ class Empjob extends Component {
     .then(res => {
       this.setState({
         ...this.state,
-        job: res.data 
+        job: res.data
       });
       console.log(this.state);
     })
@@ -55,7 +56,9 @@ class Empjob extends Component {
           {this.state.job.description}</p>
           <hr/><hr/>
           {/* // Current Applicant counter, starting at 0, supposed to be incrementing when users apply */}
-          <p>Current Applicants: <span>{this.state.job.applicants}</span></p>
+
+          {/* NEEDS TO BE LINKED TO THE APPLICANTS OF THE PARAM JOB ID */}
+          <button><Link to={`/applications`}>View Applicants</Link></button>
           {/* // Destroy job path when an Employer marks a position as filled - only if the employer created the job */}
           { this.state.job.user_id === this.state.result.id
           ?
