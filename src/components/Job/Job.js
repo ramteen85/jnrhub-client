@@ -24,14 +24,13 @@ class Job extends Component {
   }
 
   applyForJob = () => {
-    console.log('Applied');
     axios.post('http://localhost:3000/applications', {
       token: localStorage.getItem("jwt"),
       job_id: this.props.match.params.id
     })
     .then(res => {
       console.log(res.data);
-        // redirect to home, using this.props.history.push()
+      this.props.history.push('/');
     })
     .catch(err => {
       console.log(err);
@@ -52,7 +51,6 @@ class Job extends Component {
           {this.state.job.description}</p>
           <br/><hr/><hr/><br/>
           <div className={styles.apply}>
-          {/* // Apply button, not functional yet */}
           <a onClick={this.applyForJob}>Apply Now!</a>
           </div>
         </div>

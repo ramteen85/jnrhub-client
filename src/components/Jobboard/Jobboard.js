@@ -60,14 +60,6 @@ class Jobboard extends Component {
 
           </tr>
           ))}
-          { localStorage.getItem("usrType") !== 'jobseeker'
-          ? 
-           <tr className={styles.btnwrap}>
-             <button className={styles.button}><Link to="/job/create">Create Job</Link></button>
-           </tr>
-          :
-          ""
-          }
           </tbody>
         </table>
       </div>

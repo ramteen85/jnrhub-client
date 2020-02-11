@@ -59,8 +59,15 @@ class Lobbyemp extends Component {
             <td className={styles.jobcolumn}><Link to={`/empjob/${job.id}`}>Details</Link></td>
             </tr>
           ))}
+
           </tbody>
         </table>
+        { localStorage.getItem("usrType") !== 'jobseeker'
+        ?
+           <button className={styles.button}><Link to="/job/create">Create Job</Link></button>
+        :
+        ""
+        }
       </div>
     )
   }
