@@ -50,7 +50,6 @@ class Applications extends Component {
             </thead>
             <tbody>
             <tr> &nbsp; </tr>
-            {/* Loop to display list of applicants (at the moment every user) */}
             { this.state.users.map((user, key) => (
             <tr key={user.id}>
             <td className={styles.applicantcolumn}>{user.name}</td>
@@ -69,7 +68,7 @@ class Applications extends Component {
           </tbody>
           </table>
           }
-          
+
           </div>
       </div>
     )

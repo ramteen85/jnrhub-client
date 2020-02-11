@@ -32,17 +32,16 @@
   text-transform: uppercase;
   margin: 0 10px;
   position: relative;
+  color: white;
 }
 
-.apply a,
+/* .apply a,
 .apply a:after,
 .apply a:before {
   transition: all .5s;
 }
 
-.apply a:hover {
-  color: black;
-}
+
 
 .apply a:after {
   position: absolute;
@@ -55,7 +54,7 @@ content: '.';
 color: transparent;
 background: black;
 height: 1px;
-}
+} */
 
 .apply a:hover:after {
   width: 20%;

@@ -57,7 +57,7 @@ class Empjob extends Component {
           <hr/><hr/>
           {/* // Current Applicant counter, starting at 0, supposed to be incrementing when users apply */}
 
-          
+
           {/* // Destroy job path when an Employer marks a position as filled - only if the employer created the job */}
           { this.state.job.user_id === this.state.result.id
           ?
