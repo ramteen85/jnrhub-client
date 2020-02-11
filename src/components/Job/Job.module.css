@@ -28,6 +28,7 @@
   text-transform: uppercase;
   margin: 0 10px;
   position: relative;
+  cursor: pointer;
 }
 
 .apply a,

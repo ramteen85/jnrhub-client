@@ -44,7 +44,6 @@ class Job extends Component {
         {/* // Loop to show job information */}
           <h1>{this.state.job.role}</h1><br/>
           <p><strong>Company:</strong><br/><br/>{this.state.job.company_name}</p><br/><hr/><br/>
-          <p><strong>Role:</strong> <br/><br/>Junior Front End Developer</p><br/><hr/><br/>
           <p><strong>Location:</strong><br/><br/> {this.state.job.location}</p><br/><hr/><br/>
           <p><strong>Salary:</strong><br/><br/> ${this.state.job.salary}</p><br/><hr/><br/>
           <p><strong>Job Description:</strong><br/><br/><br/>
