@@ -1,14 +1,13 @@
 .applicants {
 
-  margin-top: 1%;
+  margin: 1% auto;
   text-align: center;
   font-family: 'Inconsolata', monospace;
   font-size: 1.2em;
-  margin-left: 155px;
+}
 
-
-
-
+.heading {
+  margin-bottom: 30px;
 }
 
 

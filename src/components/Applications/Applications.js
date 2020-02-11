@@ -23,7 +23,7 @@ class Applications extends Component {
       })
       .then(res => {
         console.log(res.data);
-        this.setState({ users: res.data.users });
+        this.setState({ users: res.data });
       })
       .catch(err => {
         console.log(err);
@@ -35,7 +35,7 @@ class Applications extends Component {
       return(
         <div>
           <div>
-          <h1>Users Applied</h1>
+          <h1 className={styles.heading}>Users Applied</h1>
           </div>
           <div className={styles.applicants}>
             { this.state.users
@@ -49,10 +49,11 @@ class Applications extends Component {
               </tr>
             </thead>
             <tbody>
+            <tr> &nbsp; </tr>
             {/* Loop to display list of applicants (at the moment every user) */}
             { this.state.users.map((user, key) => (
             <tr key={user.id}>
-            <td className={styles.applicantcolumn}>{user.full_name}</td>
+            <td className={styles.applicantcolumn}>{user.name}</td>
             <td className={styles.applicantcolumn}>{user.phone_no}</td>
             <td className={styles.applicantcolumn}>{user.email}</td>
             </tr>

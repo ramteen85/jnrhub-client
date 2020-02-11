@@ -61,7 +61,7 @@ class Profile extends Component {
         //send axios request with user
         const token = localStorage.getItem("jwt");
 
-        axios.post("http://localhost:3000/users",{
+        axios.post("http://localhost:3000/users/update",{
             user: {
               [fieldName]: event.target.value
             },
