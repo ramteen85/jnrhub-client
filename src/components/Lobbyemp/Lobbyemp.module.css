@@ -78,3 +78,14 @@
 .job:hover {
   background-color: #ddd;
 }
+
+
+.button {
+  position: absolute;
+  margin-bottom: 25px;
+  margin-top: 12px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 45%;
+  margin-right: auto;
+}

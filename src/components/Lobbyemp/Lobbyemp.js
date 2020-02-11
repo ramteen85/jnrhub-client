@@ -64,7 +64,10 @@ class Lobbyemp extends Component {
         </table>
         { localStorage.getItem("usrType") !== 'jobseeker'
         ?
-           <button className={styles.button}><Link to="/job/create">Create Job</Link></button>
+
+
+           <button className={styles.button}><Link to="/job/create">Create  Job</Link></button>
+
         :
         ""
         }
