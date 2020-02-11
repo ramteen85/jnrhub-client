@@ -69,7 +69,7 @@ class Applications extends Component {
           </tbody>
           </table>
           }
-          
+
           </div>
       </div>
     )

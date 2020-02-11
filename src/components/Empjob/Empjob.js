@@ -57,13 +57,16 @@ class Empjob extends Component {
           <hr/><hr/>
           {/* // Current Applicant counter, starting at 0, supposed to be incrementing when users apply */}
 
-          
+
           {/* // Destroy job path when an Employer marks a position as filled - only if the employer created the job */}
           { this.state.job.user_id === this.state.result.id
           ?
           <div className={styles.apply}>
               {/* NEEDS TO BE LINKED TO THE APPLICANTS OF THE PARAM JOB ID */}
+            <br/>
             <button><Link to={`/applications/${this.state.job.id}`}>View Applicants</Link></button>
+            <br/>
+            <br/>
             <button onClick={this.deletePostHandler} className="Delete">Mark Position as Filled</button>
           </div>
           :
