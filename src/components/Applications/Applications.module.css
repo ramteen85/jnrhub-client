@@ -1,5 +1,19 @@
 .applicants {
+
+  margin-top: 1%;
   text-align: center;
   font-family: 'Inconsolata', monospace;
   font-size: 1.2em;
+  margin-left: 155px;
+
+
+
+
 }
+
+
+/* .container {
+  display: block;
+  justify-content: center;
+  margin-bottom: 100px;
+} */
