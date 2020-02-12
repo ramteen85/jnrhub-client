@@ -24,8 +24,14 @@ class Register extends Component {
     memberHandler = (e, userPath) => {
 
         // Gets users from back end to send data to
+        let url = '';
+        if (process.env.NODE_ENV !== 'production') {
+         url = `http://localhost:3000/users`;
+        } else {
+         url = `https://whispering-chamber-55079.herokuapp.com/users}`;
+        }
 
-        axios.post('http://localhost:3000/users', {
+        axios.post(url, {
             user: {
                 email: this.state.email,
                 full_name: this.state.fullname,

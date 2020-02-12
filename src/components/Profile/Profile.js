@@ -25,9 +25,15 @@ class Profile extends Component {
   }
 
   componentDidMount() {
+    let url = '';
+    if (process.env.NODE_ENV !== 'production') {
+     url = `http://localhost:3000/users/profile`;
+    } else {
+     url = `https://whispering-chamber-55079.herokuapp.com/users/profile`;
+    }
     console.log("token");
     console.log(localStorage.getItem("jwt"));
-    axios.post('http://localhost:3000/users/profile', {
+    axios.post(url, {
         "token": localStorage.getItem("jwt")
     })
     .then(res => {
@@ -66,8 +72,13 @@ class Profile extends Component {
         //   url = 'http://localhost:3000/messages.json';
         // } else {
         //   url = 'https://visualpedia-backend.herokuapp.com/messages.json';
-
-        axios.post("http://localhost:3000/users/update",{
+        let url = '';
+        if (process.env.NODE_ENV !== 'production') {
+         url = `http://localhost:3000/users/update`;
+        } else {
+         url = `https://whispering-chamber-55079.herokuapp.com/users/update`;
+        }
+        axios.post(url,{
             user: {
               [fieldName]: event.target.value
             },

@@ -11,9 +11,15 @@ class Job extends Component {
   }
 
   componentDidMount() {
+    let url = '';
+    if (process.env.NODE_ENV !== 'production') {
+     url = `http://localhost:3000/jobs/${this.props.match.params.id}`;
+    } else {
+     url = `https://whispering-chamber-55079.herokuapp.com/jobs/${this.props.match.params.id}`;
+    }
     if(this.props.match.params.id) {
       // Get job whos ID matches that in params
-      axios.get(`http://localhost:3000/jobs/${this.props.match.params.id}`)
+      axios.get(url)
       .then(res => {
         console.log(res);
         this.setState({ profileId: this.props.match.params.id, job: res.data });
@@ -25,7 +31,13 @@ class Job extends Component {
   }
 
   applyForJob = () => {
-    axios.post('http://localhost:3000/applications', {
+    let url = '';
+    if (process.env.NODE_ENV !== 'production') {
+     url = `http://localhost:3000/applications`;
+    } else {
+     url = `https://whispering-chamber-55079.herokuapp.com/applications`;
+    }
+    axios.post(url, {
       token: localStorage.getItem("jwt"),
       job_id: this.props.match.params.id
     })

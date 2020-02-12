@@ -17,6 +17,12 @@ class Lobbyemp extends Component {
   }
 
   componentDidMount() {
+    let url = '';
+    if (process.env.NODE_ENV !== 'production') {
+     url = `http://localhost:3000/myjobs`;
+    } else {
+     url = `https://whispering-chamber-55079.herokuapp.com/myjobs`;
+    }
     // Gets jobs table
     axios.post('http://localhost:3000/myjobs', {
       token: localStorage.getItem("jwt")

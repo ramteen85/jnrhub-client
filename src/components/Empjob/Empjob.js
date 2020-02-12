@@ -18,10 +18,15 @@ class Empjob extends Component {
     this.setState({
       result: JwtDecode(localStorage.getItem("jwt"))
     });
-
+    let url = '';
+    if (process.env.NODE_ENV !== 'production') {
+     url = `http://localhost:3000/jobs/${this.props.match.params.id}`;
+    } else {
+     url = `https://whispering-chamber-55079.herokuapp.com/jobs/${this.props.match.params.id}`;
+    }
 
     // Get job whos ID matches that in params
-    axios.get(`http://localhost:3000/jobs/${this.props.match.params.id}`)
+    axios.get(url)
     .then(res => {
       this.setState({
         ...this.state,
@@ -35,7 +40,13 @@ class Empjob extends Component {
   }
 
   deletePostHandler = () => {
-    axios.delete(`http://localhost:3000/jobs/${this.props.match.params.id}`)
+    let url = '';
+    if (process.env.NODE_ENV !== 'production') {
+     url = `http://localhost:3000/jobs/${this.props.match.params.id}`;
+    } else {
+     url = `https://whispering-chamber-55079.herokuapp.com/jobs/${this.props.match.params.id}`;
+    }
+    axios.delete(url)
     .then(response => {
       this.props.history.push('/');
     });

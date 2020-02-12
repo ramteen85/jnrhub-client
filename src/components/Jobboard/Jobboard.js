@@ -17,7 +17,13 @@ class Jobboard extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/jobs')
+    let url = '';
+    if (process.env.NODE_ENV !== 'production') {
+     url = `http://localhost:3000/jobs`;
+    } else {
+     url = `https://whispering-chamber-55079.herokuapp.com/jobs`;
+   }
+    axios.get(url)
     .then(res => {
       console.log(res.data);
       this.setState({ jobs: res.data });

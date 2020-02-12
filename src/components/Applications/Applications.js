@@ -16,8 +16,15 @@ class Applications extends Component {
     }
 
     componentDidMount() {
+      
+      let url = '';
+      if (process.env.NODE_ENV !== 'production') {
+       url = 'http://localhost:3000/job-applicants';
+      } else {
+       url = 'https://whispering-chamber-55079.herokuapp.com/job-applicants';
+      }
       // Get users from back end
-      axios.post('http://localhost:3000/job-applicants', {
+      axios.post(url, {
         token: localStorage.getItem("jwt"),
         job_id: this.props.match.params.id
       })

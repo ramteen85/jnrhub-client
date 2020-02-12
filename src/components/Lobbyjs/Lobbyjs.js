@@ -12,9 +12,15 @@ class Lobbyjs extends Component {
     }
 
     componentDidMount() {
+      let url = '';
+      if (process.env.NODE_ENV !== 'production') {
+       url = `http://localhost:3000/users/profile`;
+      } else {
+       url = `https://whispering-chamber-55079.herokuapp.com/users/profile`;
+      }
 
         // Gets user profile
-        axios.post('http://localhost:3000/users/profile', {
+        axios.post(url, {
             "token": localStorage.getItem("jwt")
         })
         .then(res => {
