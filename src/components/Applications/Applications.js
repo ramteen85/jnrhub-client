@@ -17,7 +17,6 @@ class Applications extends Component {
 
     componentDidMount() {
       // Get users from back end
-
       axios.post('http://localhost:3000/job-applicants', {
         token: localStorage.getItem("jwt"),
         job_id: this.props.match.params.id
