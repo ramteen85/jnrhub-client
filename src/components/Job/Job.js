@@ -13,7 +13,7 @@ class Job extends Component {
   componentDidMount() {
     if(this.props.match.params.id) {
       // Get job whos ID matches that in params
-      axios.get(`https://whispering-chamber-55079.herokuapp.com/jobs/${this.props.match.params.id}`)
+      axios.get(`http://whispering-chamber-55079.herokuapp.com/jobs/${this.props.match.params.id}`)
       .then(res => {
         console.log(res);
         this.setState({ profileId: this.props.match.params.id, job: res.data });
@@ -25,7 +25,7 @@ class Job extends Component {
   }
 
   applyForJob = () => {
-    axios.post('https://whispering-chamber-55079.herokuapp.com/applications', {
+    axios.post('http://whispering-chamber-55079.herokuapp.com/applications', {
       token: localStorage.getItem("jwt"),
       job_id: this.props.match.params.id
     })

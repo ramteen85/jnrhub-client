@@ -17,7 +17,7 @@ class Jobboard extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://whispering-chamber-55079.herokuapp.com/jobs')
+    axios.get('http://whispering-chamber-55079.herokuapp.com/jobs')
     .then(res => {
       console.log(res.data);
       this.setState({ jobs: res.data });

@@ -14,7 +14,7 @@ class Lobbyjs extends Component {
     componentDidMount() {
 
         // Gets user profile
-        axios.post('https://whispering-chamber-55079.herokuapp.com/users/profile', {
+        axios.post('http://whispering-chamber-55079.herokuapp.com/users/profile', {
             "token": localStorage.getItem("jwt")
         })
         .then(res => {

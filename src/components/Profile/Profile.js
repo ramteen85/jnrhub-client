@@ -27,7 +27,7 @@ class Profile extends Component {
   componentDidMount() {
     console.log("token");
     console.log(localStorage.getItem("jwt"));
-    axios.post('http://localhost:3000/users/profile', {
+    axios.post('http://whispering-chamber-55079.herokuapp.com/users/profile', {
         "token": localStorage.getItem("jwt")
     })
     .then(res => {
@@ -61,7 +61,7 @@ class Profile extends Component {
         //send axios request with user
         const token = localStorage.getItem("jwt");
 
-        axios.post("http://localhost:3000/users/update",{
+        axios.post("http://whispering-chamber-55079.herokuapp.com/users/update",{
             user: {
               [fieldName]: event.target.value
             },
@@ -148,8 +148,8 @@ class Profile extends Component {
               {
                 this.state.editing.suburb
                 ?
-                <input type="text" name="suburb" 
-                  defaultValue={this.state.profile.suburb} 
+                <input type="text" name="suburb"
+                  defaultValue={this.state.profile.suburb}
                   onKeyDown={ this.updateField }
                 />
                 :
@@ -158,14 +158,14 @@ class Profile extends Component {
                   <img onClick={ this.editField } name="suburb"
                     src="/jnrhub-client/assets/img/edit-icon.png" className={styles.edit} />
                 </span>
-              }    
+              }
             </p>
             <p className={styles.profileItem}>
               {
                 this.state.editing.state
                 ?
-                <input type="text" name="state" 
-                  defaultValue={this.state.profile.state} 
+                <input type="text" name="state"
+                  defaultValue={this.state.profile.state}
                   onKeyDown={ this.updateField }
                 />
                 :
@@ -174,14 +174,14 @@ class Profile extends Component {
                   <img onClick={ this.editField } name="state"
                     src="/jnrhub-client/assets/img/edit-icon.png" className={styles.edit} />
                 </span>
-              }    
+              }
             </p>
             <p className={styles.profileItem}>
               {
                 this.state.editing.website
                 ?
-                <input type="text" name="website" 
-                  defaultValue={this.state.profile.website} 
+                <input type="text" name="website"
+                  defaultValue={this.state.profile.website}
                   onKeyDown={ this.updateField }
                 />
                 :
@@ -190,7 +190,7 @@ class Profile extends Component {
                   <img onClick={ this.editField } name="website"
                     src="/jnrhub-client/assets/img/edit-icon.png" className={styles.edit} />
                 </span>
-              }    
+              }
             </p>
             <p className={styles.profileItem}>Account Type: { this.state.profile.user_type} </p>
             <br/>
