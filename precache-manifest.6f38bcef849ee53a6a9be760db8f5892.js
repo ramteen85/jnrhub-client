@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "327b69367584c5510bae03d4b87d9e94",
+    "revision": "9d7155044ae1402e067945756ba9f196",
     "url": "/jnrhub-client/index.html"
   },
   {
-    "revision": "0f2568671d3ec6710290",
+    "revision": "d9934b0a70f416822a77",
     "url": "/jnrhub-client/static/css/main.294d485b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jnrhub-client/static/js/2.76dc471f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0f2568671d3ec6710290",
-    "url": "/jnrhub-client/static/js/main.74eee942.chunk.js"
+    "revision": "d9934b0a70f416822a77",
+    "url": "/jnrhub-client/static/js/main.ea203c1d.chunk.js"
   },
   {
     "revision": "eaa4a69a49b5f36d54d4",
