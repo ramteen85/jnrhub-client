@@ -30,7 +30,7 @@ class Login extends Component {
         if (process.env.NODE_ENV !== 'production') {
          url = 'http://localhost:3000/tokens';
         } else {
-         url = 'https://visualpedia-backend.herokuapp.com/tokens.json';
+         url = 'https://visualpedia-backend.herokuapp.com/tokens';
         }
 
 
