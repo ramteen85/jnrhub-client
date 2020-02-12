@@ -27,7 +27,7 @@ class Profile extends Component {
   componentDidMount() {
     console.log("token");
     console.log(localStorage.getItem("jwt"));
-    axios.post('https://whispering-chamber-55079.herokuapp.com/users/profile', {
+    axios.post('http://localhost:3000/users/profile', {
         "token": localStorage.getItem("jwt")
     })
     .then(res => {
@@ -61,7 +61,7 @@ class Profile extends Component {
         //send axios request with user
         const token = localStorage.getItem("jwt");
 
-        axios.post("https://whispering-chamber-55079.herokuapp.com/users/update",{
+        axios.post("http://localhost:3000/users/update",{
             user: {
               [fieldName]: event.target.value
             },

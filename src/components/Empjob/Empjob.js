@@ -21,7 +21,7 @@ class Empjob extends Component {
 
 
     // Get job whos ID matches that in params
-    axios.get(`https://whispering-chamber-55079.herokuapp.com/jobs/${this.props.match.params.id}`)
+    axios.get(`http://localhost:3000/jobs/${this.props.match.params.id}`)
     .then(res => {
       this.setState({
         ...this.state,
@@ -35,7 +35,7 @@ class Empjob extends Component {
   }
 
   deletePostHandler = () => {
-    axios.delete(`https://whispering-chamber-55079.herokuapp.com/jobs/${this.props.match.params.id}`)
+    axios.delete(`http://localhost:3000/jobs/${this.props.match.params.id}`)
     .then(response => {
       this.props.history.push('/');
     });
