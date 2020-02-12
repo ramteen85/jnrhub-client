@@ -18,7 +18,11 @@ class Lobbyemp extends Component {
 
   componentDidMount() {
     // Gets jobs table
+<<<<<<< HEAD
     axios.post('http://localhost:3000/myjobs', {
+=======
+    axios.post('https://whispering-chamber-55079.herokuapp.com/myjobs', {
+>>>>>>> 4a38e950dec2e18fbfc9f22bffc4937469df7e88
       token: localStorage.getItem("jwt")
     })
     .then(res => {
