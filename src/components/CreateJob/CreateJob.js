@@ -16,11 +16,7 @@ class CreateJob extends Component {
   submitHandler = (event) => {
       event.preventDefault();
       // Pulls jobs table from the back end
-<<<<<<< HEAD
       axios.post('http://localhost:3000/jobs', {
-=======
-      axios.post('https://whispering-chamber-55079.herokuapp.com/jobs', {
->>>>>>> 4a38e950dec2e18fbfc9f22bffc4937469df7e88
           // what data do you need to send?
           token: localStorage.getItem("jwt"),
           job: {

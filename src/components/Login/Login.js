@@ -26,11 +26,7 @@ class Login extends Component {
     loginHandler = (e) => {
         e.preventDefault();
 
-<<<<<<< HEAD
         axios.post('http://localhost:3000/tokens', {
-=======
-        axios.post('https://whispering-chamber-55079.herokuapp.com/tokens', {
->>>>>>> 4a38e950dec2e18fbfc9f22bffc4937469df7e88
             email: this.state.username,
             password: this.state.password
         })
