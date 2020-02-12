@@ -30,7 +30,7 @@ class Login extends Component {
         if (process.env.NODE_ENV !== 'production') {
          url = 'http://localhost:3000/tokens';
         } else {
-         url = 'https://visualpedia-backend.herokuapp.com/tokens';
+         url = 'https://whispering-chamber-55079.herokuapp.com/tokens';
         }
 
 
