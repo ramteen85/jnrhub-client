@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import axios from 'axios';
 // import styles from '../Lobbyjs/Lobbyjs.module.css';
 import jwtDecode from 'jwt-decode';
+import { Link } from 'react-router-dom';
+import styles from './Lobbyjs.module.css';
+
+
 
 class Lobbyjs extends Component {
 
     state = {
         profile: {
-            jobs: [] // prevents map() undefined error on initial render
+            jobs_applied_for: [] // prevents map() undefined error on initial render
+
         }
     }
 
@@ -38,7 +43,25 @@ class Lobbyjs extends Component {
             <div>
                 {/* // Displays user name for welcome message */}
                 <h1>Welcome, {this.state.profile.full_name}</h1>
+                <table className={styles.applicants}>
+                <thead>
+                  <tr>
+                    <th>Company</th>
+                    <th>Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {this.state.profile.jobs_applied_for.map((job, key) => (
+                  <tr key={key}>
+                  <td className={styles.applicantcolumn}>{job.company_name}</td>
+                    <td className={styles.applicantcolumn}>{job.role}</td>
+                    <td className={styles.applicantcolumn}><Link to={`/empjob/${job.id}`}>Details</Link></td>
+                  </tr>
+                ))}
+                </tbody>
+                </table>
             </div>
+
         );
     }
 

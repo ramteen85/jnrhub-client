@@ -1,3 +1,21 @@
-* {
-  backgorund-color: red;
+.applicants {
+
+  margin: 1% auto;
+  text-align: center;
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.2em;
 }
+
+.heading {
+  margin-bottom: 30px;
+}
+
+.displaynone {
+  display: none;
+}
+
+/* .container {
+  display: block;
+  justify-content: center;
+  margin-bottom: 100px;
+} */

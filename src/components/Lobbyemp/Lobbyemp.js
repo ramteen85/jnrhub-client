@@ -24,7 +24,7 @@ class Lobbyemp extends Component {
      url = `https://whispering-chamber-55079.herokuapp.com/myjobs`;
     }
     // Gets jobs table
-    axios.post('http://localhost:3000/myjobs', {
+    axios.post(url, {
       token: localStorage.getItem("jwt")
     })
     .then(res => {
