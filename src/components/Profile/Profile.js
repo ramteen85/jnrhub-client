@@ -61,6 +61,12 @@ class Profile extends Component {
         //send axios request with user
         const token = localStorage.getItem("jwt");
 
+        // let url = '';
+        // if (process.env.NODE_ENV !== 'production') {
+        //   url = 'http://localhost:3000/messages.json';
+        // } else {
+        //   url = 'https://visualpedia-backend.herokuapp.com/messages.json';
+
         axios.post("http://localhost:3000/users/update",{
             user: {
               [fieldName]: event.target.value

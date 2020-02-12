@@ -25,7 +25,16 @@ class Login extends Component {
 
     loginHandler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3000/tokens', {
+
+        let url = '';
+        if (process.env.NODE_ENV !== 'production') {
+         url = 'http://localhost:3000/tokens';
+        } else {
+         url = 'https://visualpedia-backend.herokuapp.com/tokens.json';
+        }
+
+
+        axios.post(url, {
             email: this.state.username,
             password: this.state.password
         })
