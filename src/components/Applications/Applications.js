@@ -17,7 +17,7 @@ class Applications extends Component {
 
     componentDidMount() {
       // Get users from back end
-      axios.post('http://localhost:3000/job-applicants', {
+      axios.post('https://whispering-chamber-55079.herokuapp.com/job-applicants', {
         token: localStorage.getItem("jwt"),
         job_id: this.props.match.params.id
       })

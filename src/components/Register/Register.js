@@ -24,8 +24,8 @@ class Register extends Component {
     memberHandler = (e, userPath) => {
 
         // Gets users from back end to send data to
-        
-        axios.post('http://localhost:3000/users', {
+
+        axios.post('https://whispering-chamber-55079.herokuapp.com/users', {
             user: {
                 email: this.state.email,
                 full_name: this.state.fullname,

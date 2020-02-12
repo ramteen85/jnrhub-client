@@ -26,7 +26,7 @@ class Login extends Component {
     loginHandler = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:3000/tokens', {
+        axios.post('https://whispering-chamber-55079.herokuapp.com/tokens', {
             email: this.state.username,
             password: this.state.password
         })
@@ -49,7 +49,7 @@ class Login extends Component {
         .catch(err => {
             //display error
             this.setState({invalidLogin: true});
-        }); 
+        });
     }
 
     inputChangeHandler = (event) => {
