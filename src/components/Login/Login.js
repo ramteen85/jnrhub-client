@@ -72,7 +72,7 @@ class Login extends Component {
                             <input type="password" name="password" onChange={this.inputChangeHandler} placeholder="Password.."/>
                             <button className = {styles.loginregisterbutton}
                             type="submit">Login</button><br/>
-                            <button className={styles.button}><a href="/#/register">Register</a></button>
+                            <button className={styles.button}><a href="/jnrhub-client/#/register">Register</a></button>
                         </form>
                         {/* // If details are invalid: */}
                         { this.state.invalidLogin
