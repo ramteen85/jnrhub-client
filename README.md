@@ -1,4 +1,4 @@
-# Jnr-Hub Back End
+# Jnr-Hub Front End
 
 * Used Ruby on Rails with React front end
 * Created by Ramteen Taheri, Kevin Osborn, and Oliver Cook
