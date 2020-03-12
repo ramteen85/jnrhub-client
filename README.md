@@ -1,6 +1,7 @@
-# Jnr-Hub Front End
+# Jnr-Hub Back End
 
-* Used React with Ruby on Rails back end
+* Used Ruby on Rails with React front end
 * Created by Ramteen Taheri, Kevin Osborn, and Oliver Cook
 * [Live Front End](https://ramteen85.github.io/jnrhub-client/#/)
-* [Live Back End](http://localhost:3000/)
+* [Live Back End](https://whispering-chamber-55079.herokuapp.com/)
+* [Github Back End](https://github.com/ramteen85/jnr-hub)
