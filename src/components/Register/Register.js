@@ -28,7 +28,7 @@ class Register extends Component {
         if (process.env.NODE_ENV !== 'production') {
          url = `http://localhost:3000/users`;
         } else {
-         url = `https://whispering-chamber-55079.herokuapp.com/users}`;
+         url = `https://whispering-chamber-55079.herokuapp.com/users`;
         }
 
         axios.post(url, {
