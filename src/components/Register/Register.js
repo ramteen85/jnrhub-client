@@ -277,12 +277,12 @@ class Register extends Component {
                       <div className={styles.container}>
                         <div className={styles.employer} onClick={(e) => this.memberHandler(e, "employer")}>
                           <label>An Employer</label>
-                          <img src="/assets/img/boss.jpeg" alt="Big Boss"/>
+                          <img src="assets/img/boss.jpeg" alt="Big Boss"/>
                         </div>
                         <div className={styles.jobseeker} onClick={(e) => this.memberHandler(e, "jobseeker")}>
                           <label>A Job Seeker</label>
 
-                          <img src="/assets/img/bludger.jpg" alt="Bludging Job Seeker"/>
+                          <img src="assets/img/bludger.jpg" alt="Bludging Job Seeker"/>
 
                         </div>
                       </div>
